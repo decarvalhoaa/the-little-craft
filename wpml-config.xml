@@ -1,0 +1,7 @@
+<wpml-config>
+	<admin-texts>
+		<key name="woocommerce_bacs_settings">
+			<key name="instructions" />
+		</key>
+	</admin-texts>
+</wpml-config>
