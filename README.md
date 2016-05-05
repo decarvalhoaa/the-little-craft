@@ -1,3 +1,7 @@
+# The Little Craft
+
+Custom StoreFront Child Theme from The Little Craft website.
+
 # Storefront Child Theme
 
 The StoreFront Child Theme is a starter blank child theme for WooThemes StoreFront WooCommerce theme.
@@ -25,5 +29,3 @@ There is also a style.scss file within the /assets/sass/ folder that can be used
 The blank child theme itself has no functionality and if you would like to learn more about child themes for WordPress see this documentation below.
 
 * [WordPress Child Themes](https://codex.wordpress.org/Child_Themes)
-
-# the-little-craft
