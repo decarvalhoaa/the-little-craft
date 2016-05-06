@@ -333,10 +333,28 @@ add_action( 'storefront_before_header', 'tlc_storefront_add_topbar' );
 
 
 /**
+ * Adds a Store wide notice, before the header.
+ */
+if ( function_exists( 'pll_register_string' ) ) {
+    pll_register_string( 'announcement', 'SPECIAL OFFER: Free shipping for Germany for orders above 29 €!', 'thelittlecraft' );
+}
+function tlc_storefront_add_shop_notice() {
+    if ( function_exists( 'pll__' ) ) {
+	?>
+	<div id="tlc-announcement" class="tlc-announcement green show-on-mobile">
+	    <span><?php pll_e( 'SPECIAL OFFER: Free shipping for Germany for orders above 29 €!' ); ?></span>
+	</div>
+	<?php
+    }
+}
+add_action( 'storefront_before_header', 'tlc_storefront_add_shop_notice', 1 );
+
+
+/**
  * Small Business VAT Notice
  */
 // Register the vat notice strings for translation
-if ( function_exists( 'pll_the_languages' ) ) {
+if ( function_exists( 'pll_register_string' ) ) {
     // The string is used before the footer in all pages
     pll_register_string( 'small_business_vat_notice_footer', '* All stated prices are final prices excl. <a href="%s" target="_blank">Shipping</a>, exempt from VAT according to Art. 19 of the German VAT law (UStG).', 'thelittlecraft' );
     // The string is used in the Credit Note template in the Customer Messages block
@@ -497,6 +515,7 @@ function tlc_translate_wpo_wcpdf_template_settings( $template_type, $id ) {
 
 	// Excludes calls from my-account page - here the current viewing language is used
 	if ( ! isset( $_GET['my-account'] ) ) {
+
 	    global $wpo_wcpdf, $locale, $wp_locale, $polylang, $woocommerce;
 	    static $cache; // Polylang string translations cache object to avoid loading the same translations object several times
 
@@ -797,6 +816,21 @@ function tlc_remove_product_page_skus( $enabled ) {
     return $enabled;
 }
 add_filter( 'wc_product_sku_enabled', 'tlc_remove_product_page_skus' );
+
+
+/**
+ *Reduce the strength requirement on the woocommerce password.
+ *
+ * Strength Settings
+ * 3 = Strong (default)
+ * 2 = Medium
+ * 1 = Weak
+ * 0 = Very Weak / Anything
+ */
+function tlc_reduce_woocommerce_min_strength_requirement( $strength ) {
+    return 1;
+}
+add_filter( 'woocommerce_min_password_strength', 'tlc_reduce_woocommerce_min_strength_requirement' );
 
 
 /**

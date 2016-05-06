@@ -192,6 +192,39 @@ mark {
 	display: inline-block;
 }
 
+/* Shop notice */
+#tlc-announcement {
+	/* Green */
+	background-color: #79bc32;
+	border-bottom: 1px solid #4caf50;
+	border-top: 1px solid #4caf50;
+	text-shadow: 0 1px 0 #4caf50;
+
+	text-align: center;
+	font-size: 13px;
+	font-family: 'Open Sans',Arial,Tahoma;
+	color: #fff;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+}
+
+#tlc-announcement.blue {
+	/* Blue */
+	background-color: #68c9e8;
+	border-bottom: 1px solid #3d9cd2;
+	border-top: 1px solid #3d9cd2;
+	text-shadow: 0 1px 0 #3d9cd2;
+}
+
+#tlc-announcement.orange {
+	/* Blue */
+	background-color: #e2401c;
+	border-bottom: 1px solid #ff0000;
+	border-top: 1px solid #ff0000;
+	text-shadow: 0 1px 0 #ff0000;
+}
+
 /* White menus and shopping-card dropdown */
 @media (min-width: 768px) {
 	.main-navigation ul.menu ul li, .main-navigation ul.nav-menu ul li {
