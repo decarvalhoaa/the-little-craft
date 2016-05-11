@@ -695,7 +695,7 @@ function tlc_get_additional_refreshed_fragments( $fragments ) {
 	    ?>
 	    <!-- Refreshed fragment -->
 	    <aside id="<?php echo $widget_id ?>" class="widget <?php echo $css_class ?>">
-		<h3 class="widget-title"><?php pll_e( $title ) ?></h3>
+		<h3 class="widget-title"><?php function_exists( 'pll_e' ) ? pll_e( $title ) : $title; ?></h3>
 		<ul class="product_list_widget">
 		<?php
 
