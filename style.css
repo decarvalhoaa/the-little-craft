@@ -207,6 +207,7 @@ mark {
 	display: block;
 	width: 100%;
 	font-weight: bold;
+	padding: 0 1.618em;
 }
 
 #tlc-announcement.blue {
