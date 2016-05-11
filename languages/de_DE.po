@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TheLittleCraft 1.0\n"
 "Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
 "POT-Creation-Date: 2016-01-18 13:18:14+00:00\n"
-"PO-Revision-Date: Wed May 11 2016 10:03:00 GMT+0200 (CEST)\n"
+"PO-Revision-Date: Wed May 11 2016 16:00:10 GMT+0200 (CEST)\n"
 "Last-Translator: Admin <info@thelittlecraft.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: German\n"
@@ -401,9 +401,7 @@ msgstr "Bitte gib eine gültige E-Mail-Adresse an."
 
 #: ../functions.php:158
 msgid "Please confirm your email address by re-typing your email address."
-msgstr ""
-"Bitte bestätigen Sie Ihre E-Mail-Adresse, indem erneut tippen Sie Ihre E-"
-"Mail-Adresse ein."
+msgstr "Bitte bestätige deine E-Mail-Adresse, indem du diese erneut eingibst."
 
 #: ../functions.php:161
 msgid "The email addresses do not match."
@@ -445,7 +443,7 @@ msgstr "E-Mail-Adresse bestätigen"
 #: ../functions.php:200
 msgctxt "placeholder"
 msgid "Retype Email Address"
-msgstr "Erneut tippen Sie Ihre E-Mail-Adresse ein."
+msgstr "Bitte gib deine Emai-Adresse erneut ein"
 
 #: ../functions.php:230
 msgid ""
