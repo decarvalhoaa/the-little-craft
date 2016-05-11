@@ -455,6 +455,11 @@ div.wpcf7 img.ajax-loader {
 	white-space: normal !important;
 }
 
+#payment .payment_methods li img {
+	max-height: 2.308em !important;
+}
+
+
 /*******************************************************************************
  *
  * Footer

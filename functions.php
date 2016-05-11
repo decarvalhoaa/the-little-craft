@@ -351,6 +351,15 @@ add_action( 'storefront_before_header', 'tlc_storefront_add_shop_notice', 1 );
 
 
 /**
+ * Replace WooCommerce default PayPal icon
+ */
+function tlc_paypal_checkout_icon() {
+ return get_stylesheet_directory_uri() . '/images/paypal_credit_cards.png'; // write your own image URL here
+}
+add_filter( 'woocommerce_paypal_icon', 'tlc_paypal_checkout_icon' );
+
+
+/**
  * Small Business VAT Notice
  */
 // Register the vat notice strings for translation
