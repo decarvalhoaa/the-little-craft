@@ -828,7 +828,7 @@ add_filter( 'wc_product_sku_enabled', 'tlc_remove_product_page_skus' );
 
 
 /**
- *Reduce the strength requirement on the woocommerce password.
+ * Reduce the strength requirement on the woocommerce password.
  *
  * Strength Settings
  * 3 = Strong (default)
@@ -841,6 +841,19 @@ function tlc_reduce_woocommerce_min_strength_requirement( $strength ) {
 }
 add_filter( 'woocommerce_min_password_strength', 'tlc_reduce_woocommerce_min_strength_requirement' );
 
+
+/**
+ * Remove '(Free)' label from Advance Free Shipping method title
+ */
+function tlc_cleanup_advance_free_shipping_label( $label, $method ) {
+
+    if ( $method && isset( $method->id ) && $method->id == 'advanced_free_shipping' ) {
+	$label = isset( $method->label ) ? __( $method->label, 'woocommerce' ) : $label;
+    }
+
+    return $label;
+}
+add_filter( 'woocommerce_cart_shipping_method_full_label', 'tlc_cleanup_advance_free_shipping_label', 10, 2 );
 
 /**
  * Events Maker
