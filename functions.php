@@ -522,8 +522,8 @@ function tlc_get_text_translation( $string_name, $default ) {
 function tlc_translate_wpo_wcpdf_template_settings( $template_type, $id ) {
     if ( class_exists( 'Polylang' ) && class_exists( 'WooCommerce_PDF_Invoices' ) ) {
 
-	// Excludes calls from my-account page - here the current viewing language is used
-	if ( ! isset( $_GET['my-account'] ) ) {
+	// Excludes PDF downloads from my-account and backend pages - where the current viewing language is used anynway
+	if ( ! isset( $_GET['action'] ) && ! defined( 'DOING_AJAX' ) ) {
 
 	    global $wpo_wcpdf, $locale, $wp_locale, $polylang, $woocommerce;
 	    static $cache; // Polylang string translations cache object to avoid loading the same translations object several times
