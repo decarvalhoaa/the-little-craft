@@ -962,3 +962,21 @@ function tlc_easymail_auto_add_subscriber_to_list( $subscriber, $user_id = false
 	alo_em_add_subscriber_to_list ( $subscriber->ID, 1 );
 }
 add_action( "alo_easymail_new_subscriber_added",  "tlc_easymail_auto_add_subscriber_to_list", 10, 2 );
+
+
+/**
+ * Apply custom css to Admin backend
+ */
+function tlc_custom_admin_css() {
+
+    $css = '<style>';
+
+    /* Fix css of WP-Lister for eBay */
+    $css .= '#wplister-ebay-categories h2 { border-top: 0 !important; }';
+    /* Add more css below before the closing tag, like this: $css .= '<my styles>'; */
+
+    $css .= '</style>';
+
+    echo $css;
+}
+add_action( 'admin_head', 'tlc_custom_admin_css' );
