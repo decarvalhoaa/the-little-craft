@@ -413,17 +413,6 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop
 
 
 /**
- * Register Storefront Parallax Hero front-end strings
- */
-if ( function_exists( 'pll_the_languages' ) ) {
-    pll_register_string( 'Heading text', 'Heading text', 'Storefront Parallax Hero Polylang fix' );
-    pll_register_string( 'Description text', 'Description text', 'Storefront Parallax Hero Polylang fix' );
-    pll_register_string( 'Button text', 'Button text', 'Storefront Parallax Hero Polylang fix' );
-    pll_register_string( 'Button url', 'Button url', 'Storefront Parallax Hero Polylang fix' );
-}
-
-
-/**
  *  Hide Standard Shipping option when free shipping is available
  */
 function tlc_hide_shipping_when_free_is_available( $rates, $package ) {
@@ -980,3 +969,59 @@ function tlc_custom_admin_css() {
     echo $css;
 }
 add_action( 'admin_head', 'tlc_custom_admin_css' );
+
+
+/**
+ * Storefront Parallax Hero - Polylang integration
+ */
+
+// Register Storefront Parallax Hero front-end strings
+if ( function_exists( 'pll_the_languages' ) ) {
+
+    global $sph_hero_strings;
+
+    $sph_hero_strings = array(
+	'Heading text' => sanitize_text_field( get_theme_mod( 'sph_hero_heading_text', __( 'Heading Text', 'storefront-parallax-hero' ) ) ),
+	'Description text' => wp_kses_post( get_theme_mod( 'sph_hero_text', __( 'Description Text', 'storefront-parallax-hero' ) ) ),
+	'Button text' => sanitize_text_field( get_theme_mod( 'sph_hero_button_text', __( 'Go shopping', 'storefront-parallax-hero' ) ) ),
+	'Button url' => sanitize_text_field( get_theme_mod( 'sph_hero_button_url', home_url() ) )
+    );
+
+    foreach ( $sph_hero_strings as $name => $string ) {
+	pll_register_string( $name, $string, 'Storefront Parallax Hero', $name == 'Description text' ? true : false );
+    }
+
+}
+
+function tlc_sph_translate_strings( $string ) {
+
+    if ( function_exists( 'pll__' ) ) {
+
+	global $sph_hero_strings;
+
+	switch ( current_filter() ) {
+
+	    case 'theme_mod_sph_hero_heading_text':
+		return pll__( $sph_hero_strings['Heading text'] );
+
+	    case 'theme_mod_sph_hero_text':
+		return pll__( $sph_hero_strings['Description text'] );
+
+	    case 'theme_mod_sph_hero_button_text':
+		return pll__( $sph_hero_strings['Button text'] );
+
+	    case 'theme_mod_sph_hero_button_url':
+		return pll__( $sph_hero_strings['Button url'] );
+
+	    default:
+		return $string;
+
+	}
+    }
+
+    return $string;
+}
+add_filter( 'theme_mod_sph_hero_heading_text', 'tlc_sph_translate_strings' );
+add_filter( 'theme_mod_sph_hero_text', 'tlc_sph_translate_strings' );
+add_filter( 'theme_mod_sph_hero_button_text', 'tlc_sph_translate_strings' );
+add_filter( 'theme_mod_sph_hero_button_url', 'tlc_sph_translate_strings' );
