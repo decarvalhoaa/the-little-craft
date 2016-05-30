@@ -974,7 +974,7 @@ add_action( 'admin_head', 'tlc_custom_admin_css' );
 /**
  * Storefront Parallax Hero - Polylang integration
  */
-
+/*
 // Register Storefront Parallax Hero front-end strings
 if ( function_exists( 'pll_the_languages' ) ) {
 
@@ -1025,3 +1025,4 @@ add_filter( 'theme_mod_sph_hero_heading_text', 'tlc_sph_translate_strings' );
 add_filter( 'theme_mod_sph_hero_text', 'tlc_sph_translate_strings' );
 add_filter( 'theme_mod_sph_hero_button_text', 'tlc_sph_translate_strings' );
 add_filter( 'theme_mod_sph_hero_button_url', 'tlc_sph_translate_strings' );
+*/
