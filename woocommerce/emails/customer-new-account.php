@@ -31,6 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php endif; ?>
 
-<p><?php printf( __( 'You can access your account area to view your orders and change your password here: <a href="%s">%s</a>.', 'woocommerce' ), wc_get_page_permalink( 'myaccount' ), wc_get_page_permalink( 'myaccount' ) ); ?></p>
+<p><?php printf( __( 'You can access your account area to view your orders and change your password here: <a href="%s">%s</a>.', 'thelittlecraft' ), wc_get_page_permalink( 'myaccount' ), wc_get_page_permalink( 'myaccount' ) ); ?></p>
 
 <?php do_action( 'woocommerce_email_footer', $email ); ?>

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TheLittleCraft 1.0\n"
 "Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
 "POT-Creation-Date: 2016-01-18 13:18:14+00:00\n"
-"PO-Revision-Date: Wed May 11 2016 16:01:37 GMT+0200 (CEST)\n"
+"PO-Revision-Date: Mon May 30 2016 21:02:11 GMT+0200 (CEST)\n"
 "Last-Translator: Admin <info@thelittlecraft.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: English (UK)\n"
@@ -22,182 +22,35 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Loco-Target-Locale: en_GB"
 
-#: ../functions.php:876
+#: ../functions.php:879
 msgid "Buy Tickets"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:144 ../storefront-
-#: parallax-hero/storefront-parallax-hero.php:153
-msgid "Cheatin&#8217; huh?"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:163
-msgid "Support"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:164
-msgid "Docs"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:199
-#, php-format
-msgid ""
-"%sThanks for installing the Storefront Parallax Hero extension. To get "
-"started, visit the %sCustomizer%s.%s %sOpen the Customizer%s"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:306
-msgid "Parallax Hero"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:307
-msgid ""
-"Customise the appearance and content of the hero component that is displayed "
-"on your homepage."
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:315
-msgid "Content"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:321
-msgid "Background"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:327
-msgid "Layout"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:336 ../storefront-
-#: parallax-hero/storefront-parallax-hero.php:699
-msgid "Heading Text"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:341
-msgid "Heading text"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:375 ../storefront-
-#: parallax-hero/storefront-parallax-hero.php:701
-msgid "Description Text"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:380
-msgid "Description text"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:443
-msgid "Background media"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:444
-msgid "Upload an image or a video to be displayed as the hero background"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:457
-msgid "Background image size"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:458
-msgid "When using a background image, specify which background size method to apply"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:480
-msgid "Background color"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:481
-msgid ""
-"Set the background color for the hero component (the background might not "
-"always be visible)"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:503
-msgid "Parallax"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:504
-msgid "Enable the parallax scrolling effect"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:518
-msgid "Parallax scroll speed"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:519
-msgid "The speed at which the parallax background scrolls relative to the window"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:543
-msgid "Parallax offset"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:544
-msgid "Offset the starting position of your background image"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:565
-msgid "Specify the overlay background color"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:583
-msgid "Overlay opacity"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:607 ../storefront-
-#: parallax-hero/storefront-parallax-hero.php:706
-msgid "Go shopping"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:612
-msgid "Button text"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:628
-msgid "Button url"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:642
-msgid "Text alignment"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:662
-msgid "Hero layout"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:682
-msgid "Full height"
-msgstr ""
-
-#: ../storefront-parallax-hero/storefront-parallax-hero.php:683
-msgid ""
-"Set the hero component to full height. Works best when the Hero is the first "
-"element in your homepage content area."
-msgstr ""
+msgstr "Buy Tickets"
 
 #: ../includes/tlc_email-customer-credit-note.php:74
 msgid "Credit Note for order {order_number} from {order_date}"
-msgstr ""
+msgstr "Credit Note for order {order_number} from {order_date}"
 
 #: ../includes/tlc_email-customer-credit-note.php:75
 msgid "Credit Note for order {order_number}"
-msgstr ""
+msgstr "Credit Note for order {order_number}"
 
 #: ../includes/tlc_email-customer-credit-note.php:76
 msgid ""
 "A refund has been issued for your order, attached to this email you will "
 "find a credit note with the details."
 msgstr ""
+"A refund has been issued for your order, attached to this email you will "
+"find a credit note with the details."
 
 #: ../woocommerce/emails/customer-new-account.php:26
 #, php-format
 msgid "Thanks for creating an account on %s. Your username is <strong>%s</strong>."
-msgstr ""
+msgstr "Thanks for creating an account on %s. Your username is <strong>%s</strong>."
 
 #: ../woocommerce/emails/customer-new-account.php:30
 #, php-format
 msgid "Your password has been automatically generated: <strong>%s</strong>"
-msgstr ""
+msgstr "Your password has been automatically generated: <strong>%s</strong>"
 
 #: ../woocommerce/emails/customer-new-account.php:34
 #, php-format
@@ -205,16 +58,18 @@ msgid ""
 "You can access your account area to view your orders and change your "
 "password here: <a href=\"%s\">%s</a>."
 msgstr ""
+"You can access your account area to view your orders and change your "
+"password here: <a href=\"%s\">%s</a>."
 
 #: ../woocommerce/emails/customer-credit-note.php:25
 msgid "Order:"
-msgstr ""
+msgstr "Order:"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:9 ../woocommerce/pdf/tlc-no-
 #: vat/credit-note.php:45 ../woocommerce/pdf/tlc/credit-note.php:9 ..
 #: woocommerce/pdf/tlc/credit-note.php:45
 msgid "Credit Note"
-msgstr ""
+msgstr "Credit Note"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:23 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:23 ../woocommerce/pdf/tlc-no-vat/proforma.php:29 ..
@@ -222,24 +77,24 @@ msgstr ""
 #: note.php:23 ../woocommerce/pdf/tlc/invoice.php:23 ..
 #: woocommerce/pdf/tlc/proforma.php:29 ../woocommerce/pdf/tlc/packing-slip.php:40
 msgid "Billing Address:"
-msgstr ""
+msgstr "Billing Address:"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:34 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:34 ../woocommerce/pdf/tlc-no-vat/proforma.php:40 ..
 #: woocommerce/pdf/tlc/credit-note.php:34 ../woocommerce/pdf/tlc/invoice.php:34 .
 #: ./woocommerce/pdf/tlc/proforma.php:40
 msgid "Ship To:"
-msgstr ""
+msgstr "Ship To:"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:53 ../woocommerce/pdf/tlc/credit-
 #: note.php:53
 msgid "Credit Note Number:"
-msgstr ""
+msgstr "Credit Note Number:"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:58 ../woocommerce/pdf/tlc/credit-
 #: note.php:58
 msgid "Credit Note Date:"
-msgstr ""
+msgstr "Credit Note Date:"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:63 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:65 ../woocommerce/pdf/tlc-no-vat/proforma.php:58 ..
@@ -247,7 +102,7 @@ msgstr ""
 #: note.php:63 ../woocommerce/pdf/tlc/invoice.php:65 ..
 #: woocommerce/pdf/tlc/proforma.php:58 ../woocommerce/pdf/tlc/packing-slip.php:48
 msgid "Order Number:"
-msgstr ""
+msgstr "Order Number:"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:67 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:69 ../woocommerce/pdf/tlc-no-vat/proforma.php:62 ..
@@ -255,14 +110,14 @@ msgstr ""
 #: note.php:67 ../woocommerce/pdf/tlc/invoice.php:69 ..
 #: woocommerce/pdf/tlc/proforma.php:62 ../woocommerce/pdf/tlc/packing-slip.php:52
 msgid "Order Date:"
-msgstr ""
+msgstr "Order Date:"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:71 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:73 ../woocommerce/pdf/tlc-no-vat/proforma.php:66 ..
 #: woocommerce/pdf/tlc/credit-note.php:71 ../woocommerce/pdf/tlc/invoice.php:73 .
 #: ./woocommerce/pdf/tlc/proforma.php:66
 msgid "Payment Method:"
-msgstr ""
+msgstr "Payment Method:"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:88 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:91 ../woocommerce/pdf/tlc-no-vat/proforma.php:80 ..
@@ -270,7 +125,7 @@ msgstr ""
 #: note.php:88 ../woocommerce/pdf/tlc/invoice.php:91 ..
 #: woocommerce/pdf/tlc/proforma.php:80 ../woocommerce/pdf/tlc/packing-slip.php:70
 msgid "Product"
-msgstr ""
+msgstr "Product"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:89 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:92 ../woocommerce/pdf/tlc-no-vat/proforma.php:81 ..
@@ -278,20 +133,20 @@ msgstr ""
 #: note.php:89 ../woocommerce/pdf/tlc/invoice.php:92 ..
 #: woocommerce/pdf/tlc/proforma.php:81 ../woocommerce/pdf/tlc/packing-slip.php:71
 msgid "Quantity"
-msgstr ""
+msgstr "Quantity"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:90 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:93 ../woocommerce/pdf/tlc-no-vat/proforma.php:82 ..
 #: woocommerce/pdf/tlc/credit-note.php:90 ../woocommerce/pdf/tlc/invoice.php:93 .
 #: ./woocommerce/pdf/tlc/proforma.php:82
 msgid "Price"
-msgstr ""
+msgstr "Price"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:91 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:94 ../woocommerce/pdf/tlc/credit-note.php:92 ..
 #: woocommerce/pdf/tlc/invoice.php:95
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:98 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:102 ../woocommerce/pdf/tlc-no-vat/proforma.php:89 ..
@@ -299,97 +154,97 @@ msgstr ""
 #: note.php:99 ../woocommerce/pdf/tlc/invoice.php:103 ..
 #: woocommerce/pdf/tlc/proforma.php:89 ../woocommerce/pdf/tlc/packing-slip.php:78
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../woocommerce/pdf/tlc-no-vat/credit-note.php:115 ..
 #: woocommerce/pdf/tlc/credit-note.php:122
 msgid "Reason for refund"
-msgstr ""
+msgstr "Reason for refund"
 
 #: ../woocommerce/pdf/tlc-no-vat/invoice.php:9 ../woocommerce/pdf/tlc-no-
 #: vat/invoice.php:45 ../woocommerce/pdf/tlc/invoice.php:9 ..
 #: woocommerce/pdf/tlc/invoice.php:45
 msgid "Invoice"
-msgstr ""
+msgstr "Invoice"
 
 #: ../woocommerce/pdf/tlc-no-vat/invoice.php:54 ../woocommerce/pdf/tlc/invoice.
 #: php:54
 msgid "Invoice Number:"
-msgstr ""
+msgstr "Invoice Number:"
 
 #: ../woocommerce/pdf/tlc-no-vat/invoice.php:60 ../woocommerce/pdf/tlc/invoice.
 #: php:60
 msgid "Invoice Date:"
-msgstr ""
+msgstr "Invoice Date:"
 
 #: ../woocommerce/pdf/tlc-no-vat/invoice.php:81 ../woocommerce/pdf/tlc/invoice.
 #: php:81
 msgid "Thank you for your order"
-msgstr ""
+msgstr "Thank you for your order"
 
 #: ../woocommerce/pdf/tlc-no-vat/invoice.php:119 ../woocommerce/pdf/tlc-no-
 #: vat/proforma.php:110 ../woocommerce/pdf/tlc-no-vat/packing-slip.php:99 ..
 #: woocommerce/pdf/tlc/invoice.php:126 ../woocommerce/pdf/tlc/proforma.php:110 ..
 #: woocommerce/pdf/tlc/packing-slip.php:99
 msgid "Customer Notes"
-msgstr ""
+msgstr "Customer Notes"
 
 #: ../woocommerce/pdf/tlc-no-vat/proforma.php:9 ../woocommerce/pdf/tlc-no-
 #: vat/proforma.php:21 ../woocommerce/pdf/tlc/proforma.php:9 ..
 #: woocommerce/pdf/tlc/proforma.php:21
 msgid "Proforma Invoice"
-msgstr ""
+msgstr "Proforma Invoice"
 
 #: ../woocommerce/pdf/tlc-no-vat/proforma.php:48 ../woocommerce/pdf/tlc/proforma.
 #: php:48
 msgid "Proforma Invoice Number:"
-msgstr ""
+msgstr "Proforma Invoice Number:"
 
 #: ../woocommerce/pdf/tlc-no-vat/proforma.php:53 ../woocommerce/pdf/tlc/proforma.
 #: php:53
 msgid "Proforma Invoice Date:"
-msgstr ""
+msgstr "Proforma Invoice Date:"
 
 #: ../woocommerce/pdf/tlc-no-vat/proforma.php:94 ../woocommerce/pdf/tlc-no-
 #: vat/packing-slip.php:83 ../woocommerce/pdf/tlc/credit-note.php:104 ..
 #: woocommerce/pdf/tlc/invoice.php:108 ../woocommerce/pdf/tlc/proforma.php:94 ..
 #: woocommerce/pdf/tlc/packing-slip.php:83
 msgid "SKU"
-msgstr ""
+msgstr "SKU"
 
 #: ../woocommerce/pdf/tlc-no-vat/proforma.php:95 ../woocommerce/pdf/tlc-no-
 #: vat/packing-slip.php:84 ../woocommerce/pdf/tlc/credit-note.php:105 ..
 #: woocommerce/pdf/tlc/invoice.php:109 ../woocommerce/pdf/tlc/proforma.php:95 ..
 #: woocommerce/pdf/tlc/packing-slip.php:84
 msgid "SKU:"
-msgstr ""
+msgstr "SKU:"
 
 #: ../woocommerce/pdf/tlc-no-vat/proforma.php:96 ../woocommerce/pdf/tlc-no-
 #: vat/packing-slip.php:85 ../woocommerce/pdf/tlc/credit-note.php:106 ..
 #: woocommerce/pdf/tlc/invoice.php:110 ../woocommerce/pdf/tlc/proforma.php:96 ..
 #: woocommerce/pdf/tlc/packing-slip.php:85
 msgid "Weight:"
-msgstr ""
+msgstr "Weight:"
 
 #: ../woocommerce/pdf/tlc-no-vat/packing-slip.php:9 ../woocommerce/pdf/tlc-no-
 #: vat/packing-slip.php:21 ../woocommerce/pdf/tlc/packing-slip.php:9 ..
 #: woocommerce/pdf/tlc/packing-slip.php:21
 msgid "Packing Slip"
-msgstr ""
+msgstr "Packing Slip"
 
 #: ../woocommerce/pdf/tlc-no-vat/packing-slip.php:29 ..
 #: woocommerce/pdf/tlc/packing-slip.php:29
 msgid "Shipping Address:"
-msgstr ""
+msgstr "Shipping Address:"
 
 #: ../woocommerce/pdf/tlc-no-vat/packing-slip.php:56 ..
 #: woocommerce/pdf/tlc/packing-slip.php:56
 msgid "Shipping Method:"
-msgstr ""
+msgstr "Shipping Method:"
 
 #: ../woocommerce/pdf/tlc/credit-note.php:91 ../woocommerce/pdf/tlc/invoice.php:94
 msgid "VAT"
-msgstr ""
+msgstr "VAT"
 
 #: ../functions.php:142
 msgid "Confirm email address"
