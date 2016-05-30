@@ -1,26 +1,26 @@
 # The Little Craft
 
-Custom StoreFront Child Theme from The Little Craft website.
+Custom Storefront Child Theme from [The Little Craft](https://www.thelittlecraft.com) website.
 
-# Storefront Child Theme
+# Looking for a blank Storefront Child Theme
 
-The StoreFront Child Theme is a starter blank child theme for WooThemes StoreFront WooCommerce theme.
+You can find a blank child theme for WooThemes Storefront WooCommerce theme [here](https://github.com/stuartduff/storefront-child-theme).
 
 ## Installation
 
-1. Download the child theme from it's GitHub Repository [Download StoreFront Blank Child Theme](https://github.com/stuartduff/storefront-child-theme).
+1. Download the child theme from it's GitHub Repository [Download Storefront Blank Child Theme](https://github.com/stuartduff/storefront-child-theme).
 2. Goto WordPress > Appearance > Themes > Add New.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-## Useage
+## Usage
 
-This child theme is designed to be used as a starter theme for the WooCommerce StoreFront theme which you can download for free below.
+This child theme is designed to be used as a starter theme for the WooCommerce Storefront theme which you can download for free below.
 
-* [Download WooCommerce StoreFront Theme](https://wordpress.org/themes/storefront/)
-* [StoreFront Documentation](http://docs.woothemes.com/documentation/themes/storefront/)
-* [StoreFront Child Themes](http://www.woothemes.com/product-category/themes/storefront-child-theme-themes/)
-* [StoreFront Extensions](http://www.woothemes.com/product-category/storefront-extensions/)
+* [Download WooCommerce Storefront Theme](https://wordpress.org/themes/storefront/)
+* [Storefront Documentation](http://docs.woothemes.com/documentation/themes/storefront/)
+* [Storefront Child Themes](http://www.woothemes.com/product-category/themes/storefront-child-theme-themes/)
+* [Storefront Extensions](http://www.woothemes.com/product-category/storefront-extensions/)
 
 Custom PHP that you write should be added to the child themes functions.php file whilst any custom CSS should be added to the child themes style.css file.
 
