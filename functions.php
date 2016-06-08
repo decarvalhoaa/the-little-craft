@@ -969,3 +969,13 @@ function tlc_custom_admin_css() {
     echo $css;
 }
 add_action( 'admin_head', 'tlc_custom_admin_css' );
+
+
+/**
+ * Pinterest website verification meta tag
+ */
+function tlc_pinterest_website_verification() {
+    echo '<meta name="p:domain_verify" content="acf37eeb7ab14928f01527e8f48fd631"/>';
+}
+add_action('wp_head','tlc_pinterest_website_verification');
+
