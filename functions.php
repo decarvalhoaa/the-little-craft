@@ -972,10 +972,10 @@ add_action( 'admin_head', 'tlc_custom_admin_css' );
 
 
 /**
- * Pinterest website verification meta tag
+ * Adds socia meta tag to header
  */
-function tlc_pinterest_website_verification() {
-    echo '<meta name="p:domain_verify" content="acf37eeb7ab14928f01527e8f48fd631"/>';
+function tlc_social_meta() {
+    echo '<meta name="p:domain_verify" content="99280a9063b89f7dd9675262c476da83"/>'; // Pinterest domain verification
+    echo '<meta property="fb:admins" content="100011416258345" />'; // Facebook admin data
 }
-add_action('wp_head','tlc_pinterest_website_verification');
-
+add_action('wp_head','tlc_social_meta');
