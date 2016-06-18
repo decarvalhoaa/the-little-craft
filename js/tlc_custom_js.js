@@ -30,6 +30,14 @@ jQuery( document ).ready( function( $ ) {
 	$( '#alo_easymail_widget_form input[type=radio]').change( resetAloEasyEmailWidgetFeedback );
 
 
+	/**
+	 * Enable prettyPhoto Lightboxes for the images in blog posts
+	 */
+	$( '.blog .content-area a, .single-post .content-area a' ).has( 'img' ).each( function() {
+		$( this ).attr( 'data-rel', 'prettyPhoto[photo-gallery]' );
+	});
+
+
 
 	/**
 	* If the javascript vars are defined, then it's a single product page and the widget
