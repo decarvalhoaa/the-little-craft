@@ -119,24 +119,6 @@ mark {
 	display: none !important;
 }
 
-/* tables */
-table td {
-	border: 1px solid #f9f9f9;
-}
-
-table tbody th, table theade td, table tbody tr:first-child td  {
-	text-align: center !important;
-	text-transform: capitalize;
-	vertical-align: middle;
-	background: rgba(0,0,0,.07);
-	color: #ee626a;
-	font-weight: bold;
-}
-
-table tbody tr:nth-child(2n) {
-	background-color: rgba(0,0,0,.025);
-}
-
 
 /*******************************************************************************
  *
@@ -479,6 +461,22 @@ div.wpcf7 img.ajax-loader {
 }
 
 /* Shipping prices */
+#shipping-table td {
+	border: 1px solid #f9f9f9;
+}
+
+#shipping-table tbody tr:first-child td  {
+	text-align: center !important;
+	text-transform: capitalize;
+	vertical-align: middle;
+	background-color: rgba(0,0,0,.07);
+	color: #ee626a;
+	font-weight: bold;
+}
+
+#shipping-table tbody tr:nth-child(2n) {
+	background-color: rgba(0,0,0,.025);
+}
 
 #shipping-table tbody td:first-child {
 	vertical-align: middle;
