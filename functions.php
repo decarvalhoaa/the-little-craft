@@ -417,15 +417,20 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop
  */
 function tlc_hide_shipping_when_free_is_available( $rates, $package ) {
 
-    // Only modify rates if free_shipping is present
-    if ( isset( $rates['free_shipping'] ) ) {
-	// To unset a single rate/method, do the following. This example unsets flat_rate shipping
-	//unset( $rates['flat_rate'] );
+    $free_shipping = array();
 
-	// To unset all methods except for free_shipping, do the following
-	$free_shipping          = $rates['free_shipping'];
+    foreach( $rates as $rate ) {
+	// Only modify rates if free_shipping is present
+	if ( 'free_shipping' === $rate->method_id ) {
+	    $free_shipping = $rate;
+	    break;
+	}
+    }
+
+    if ( ! empty( $free_shipping ) ) {
+	// Unset all methods except for free_shipping, do the following
 	$rates                  = array();
-	$rates['free_shipping'] = $free_shipping;
+	$rates[$free_shipping->id] = $free_shipping;
     }
 
     return $rates;
