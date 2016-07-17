@@ -473,7 +473,7 @@ function tlc_replace_class_wc_email_customer_credit_note() {
 	add_filter( 'woocommerce_email_classes', 'tlc_override_class' );
     }
 }
-add_action( 'woocommerce_init', 'tlc_replace_class_wc_email_customer_credit_note' );
+//add_action( 'woocommerce_init', 'tlc_replace_class_wc_email_customer_credit_note' );
 
 
 /**
@@ -581,7 +581,7 @@ function tlc_translate_wpo_wcpdf_template_settings( $template_type, $id ) {
 	}
     }
 }
-add_action( 'wpo_wcpdf_process_template_order', 'tlc_translate_wpo_wcpdf_template_settings', 10, 2 );
+//add_action( 'wpo_wcpdf_process_template_order', 'tlc_translate_wpo_wcpdf_template_settings', 10, 2 );
 
 
 /**
@@ -984,3 +984,4 @@ function tlc_social_meta() {
     echo '<meta property="fb:admins" content="100011416258345" />'; // Facebook admin data
 }
 add_action('wp_head','tlc_social_meta');
+
