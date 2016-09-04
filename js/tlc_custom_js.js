@@ -37,46 +37,4 @@ jQuery( document ).ready( function( $ ) {
 		$( this ).attr( 'data-rel', 'prettyPhoto[photo-gallery]' );
 	});
 
-
-
-	/**
-	* If the javascript vars are defined, then it's a single product page and the widget
-	* 'woocommercer_recently_viewed_products' is active. In this case, this code will run
-	* and updates the cookie that holds the list of recently viewed products ids, in the
-	* event the user is served a cached paged. The cached page could have been generated
-	* during other user's visit, and therefore containing his/hers list of recently viewed
-	* product ids. Without this code snippet, the cookie would not be updated.
-	* The code also inserts a hidden placeholder for the widget HTML, if not present.
-	* The placeholder will be replaced by the refreshed fragment return via ajax (see
-	* function tlc_get_additional_refreshed_fragments() for details). This avoid, that
-	* no widget is printed, if the cached page was generated upon the first product view.
-	*/
-	if ( typeof tlc_widget_id !== 'undefined' && typeof tlc_product_id !== 'undefined' && typeof tlc_wc_recently_viewed_products_cookie !== 'undefined' ) {
-		if ( $( '#' + tlc_widget_id ).length == 0 ) {
-		    $( '.widget-area' ).append( '<aside id="' + tlc_widget_id + '" class="hidden"></aside>' );
-		}
-
-		if ( ! $.cookie( tlc_wc_recently_viewed_products_cookie.name ) ) {
-		    viewed_products = [];
-		}
-		else {
-		    viewed_products = $.cookie( tlc_wc_recently_viewed_products_cookie.name ).split( '|' );
-		}
-
-		if ( viewed_products.indexOf( tlc_product_id ) >= 0 ) {
-		    viewed_products.splice( viewed_products.indexOf( tlc_product_id ), 1 );
-		}
-		viewed_products.push( tlc_product_id );
-
-		if ( viewed_products.length > 15 ) {
-		    viewed_products.shift();
-		}
-
-		$.cookie( tlc_wc_recently_viewed_products_cookie.name, viewed_products.join( '|' ), {
-		    expires: '',
-		    path: tlc_wc_recently_viewed_products_cookie.path,
-		    domain: tlc_wc_recently_viewed_products_cookie.domain,
-		    secure: false
-		} )
-	}
 } );
