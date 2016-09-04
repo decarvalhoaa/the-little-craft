@@ -85,8 +85,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .button
 
 /* Checkout button in widgets */
 .widget a.button.checkout {
-	background-color: #fde7dd;
-    border-color: #fde7dd;
+	background-color: #fde7dd !important;
+    border-color: #fde7dd !important;
+	color: #ee626a !important;
 }
 
 /* Hover style for buttons */
