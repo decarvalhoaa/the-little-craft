@@ -85,8 +85,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .button
 
 /* Checkout button in widgets */
 .widget a.button.checkout {
-	background-color: #fde7dd;
-    border-color: #fde7dd;
+	background-color: #fde7dd !important;
+    border-color: #fde7dd !important;
+	color: #ee626a !important;
 }
 
 /* Hover style for buttons */
@@ -97,7 +98,7 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
 
 }
 
-.woocommerce-message .button:hover {
+.woocommerce-error .button:hover, .woocommerce-info .button:hover, .woocommerce-message .button:hover, .woocommerce-noreviews .button:hover, p.no-comments .button:hover {
 	background-color: transparent !important;
 	border-color: transparent !important;
 	border-left-style: solid;
