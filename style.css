@@ -151,6 +151,13 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .button
 	/*display: none;*/
 }
 
+/* Fix handheld menu toggle button style */
+button.menu-toggle, button.menu-toggle:hover {
+    background-color: #ffffff !important;
+	color: #5f6062 !important;
+	border-color: #5f6062 !important;
+}
+
 
 /*******************************************************************************
  *
