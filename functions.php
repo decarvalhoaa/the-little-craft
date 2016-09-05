@@ -776,3 +776,12 @@ function tlc_social_meta() {
 }
 add_action('wp_head','tlc_social_meta');
 
+
+/**
+ * Translate WooCommerce Breadcrumbs home url
+ * @todo	Port to WooPoly
+ */
+function tlc_translate_breadrumb_home_url() {
+	return pll_home_url();
+}
+add_filter( 'woocommerce_breadcrumb_home_url', 'tlc_translate_breadrumb_home_url' );
