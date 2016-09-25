@@ -17,9 +17,14 @@ jQuery( document ).ready( function( $ ) {
 	 * ALO EasyMail Newsletter
 	 */
 	// Add placeholder text to Alo EasyEmail Newsletter form
-	$( '#opt_email' ).attr( "placeholder", "Your E-Mail address" );
+	var pll_lang = $.cookie( 'pll_language' );
+	if ( pll_lang === null || pll_lang === undefined || pll_lang === '' || pll_lang == 'en' ) {
+		$( '#opt_email' ).attr( "placeholder", "Your Email address" );
+	} else {
+		$( '#opt_email' ).attr( "placeholder", "Deine E-Mail Adresse" );
+	}
 
-	function resetAloEasyEmailWidgetFeedback( e ) {
+	function resetAloEasyEmailWidgetFeedback() {
 		//e.preventDefault(); // prevent the default action
 		//e.stopPropagation(); // stop the click from bubbling
 		$( '#alo_easymail_widget_feedback' ).removeClass( 'alo_easymail_widget_ok' ).removeClass( 'alo_easymail_widget_error' );
