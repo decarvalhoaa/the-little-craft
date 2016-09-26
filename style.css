@@ -764,6 +764,7 @@ button.menu-toggle, button.menu-toggle:hover {
 
 .alo_easymail_widget_form input[type=text] {
 	width: 100% !important;
+	max-width: 400px;
 }
 
 
