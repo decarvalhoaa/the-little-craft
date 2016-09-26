@@ -22,27 +22,32 @@ $footer_sender_id   = 'Owner: Antonio de Carvalho<br>An Der Fest 10, 40882 Ratin
 $footer_unsubscribe = 'If you no longer want to receive messages from us, you can <u><a href="[USER-UNSUBSCRIBE-URL]" style="color:#aaa;font-size:12px;text-decoration:none;">unsubscribe here.</a></u>';
 
 /* Footer page links */
+$blog_page_id    = get_option( 'page_for_posts' );;
 $privacy_page_id = 79;
 $imprint_page_id = 80;
 $terms_page_id   = 81;
 
-if ( class_exists( 'ALO_EasyMail_Custom_Functions' ) ) :
+if ( class_exists( 'ALO_EasyMail_Custom_Functions' ) && class_exists( 'Polylang' ) ) :
     $template = new ALO_EasyMail_Custom_Functions();
+    
+    /* Get language - try recipient first, than newsletter, than current locale */
+    if ( isset( $recipient ) )
+        $lang = $recipient->lang;
+    elseif ( isset( $newsletter ) )
+        $lang = pll_get_post_language( $newsletter->ID );
+    else
+        $lang = alo_em_short_langcode ( get_locale() );
     
     /* Translate template strings */
     foreach ( $template->newsletter_strings as $name => $string ) {
-        if ( function_exists('pll_translate_string') && isset( $recipient ) )
-            ${$name} = pll_translate_string( $string, $recipient->lang );
-        else
-            ${$name} = $string;
+        ${$name} = pll_translate_string( $string, $lang );
     }
     
     /* Translate footer page links */
-    if ( function_exists( 'pll_get_post' ) && isset( $recipient ) ) {
-        $privacy_page_id = pll_get_post( $privacy_page_id, $recipient->lang );
-        $imprint_page_id = pll_get_post( $imprint_page_id, $recipient->lang );
-        $terms_page_id   = pll_get_post( $terms_page_id, $recipient->lang );    
-    }
+    $blog_page_id    = pll_get_post( $blog_page_id, $lang );
+    $privacy_page_id = pll_get_post( $privacy_page_id, $lang );
+    $imprint_page_id = pll_get_post( $imprint_page_id, $lang );
+    $terms_page_id   = pll_get_post( $terms_page_id, $lang );    
 endif;
 
 ?>
@@ -230,7 +235,7 @@ endif;
                                                         -webkit-border-radius:3px;
                                                         border-radius:3px
                                                         ">
-                                                        <a href="https://www.thelittlecraft.com/en/blog/" target="_blank" style="
+                                                        <a href="<?php echo get_page_link( $blog_page_id ); ?>" target="_blank" style="
                                                             display: inline-block;
                                                             color: #ffffff;
                                                             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
