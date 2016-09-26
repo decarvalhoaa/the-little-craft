@@ -89,7 +89,7 @@ endif;
                                 <tr>
                                     <td class="site-name" bgcolor="#ffffff" align="left">
                                         <a href="[SITE-URL]" target="_blank" style="font-family:'Helvetica Neue', Helvetica, sans-serif; font-size: 42px; text-decoration:none; color: #ee6062;">
-                                            <img src="<?php echo site_url(); ?>/wp-content/themes/storefront-child-theme-master/images/thelittlecraft.jpg" alt="[SITE-NAME]" width="240" border="0" />
+                                            <img src="shopify/thelittlecraft.jpg" alt="[SITE-NAME]" width="240" border="0" />
                                         </a>
                                     </td>
                                 </tr>
