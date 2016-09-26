@@ -30,24 +30,19 @@ $terms_page_id   = 81;
 if ( class_exists( 'ALO_EasyMail_Custom_Functions' ) && class_exists( 'Polylang' ) ) :
     $template = new ALO_EasyMail_Custom_Functions();
     
-    /* Get language - try recipient first, than newsletter, than current locale */
-    if ( isset( $recipient ) )
-        $lang = $recipient->lang;
-    elseif ( isset( $newsletter ) )
-        $lang = pll_get_post_language( $newsletter->ID );
-    else
-        $lang = alo_em_short_langcode ( get_locale() );
+    if ( !is_object( $recipient ) ) $recipient = new stdClass();
+	if ( empty( $recipient->lang ) ) $recipient->lang = alo_em_short_langcode ( get_locale() );
     
     /* Translate template strings */
     foreach ( $template->newsletter_strings as $name => $string ) {
-        ${$name} = pll_translate_string( $string, $lang );
+        ${$name} = pll_translate_string( $string, $recipient->lang );
     }
     
     /* Translate footer page links */
-    $blog_page_id    = pll_get_post( $blog_page_id, $lang );
-    $privacy_page_id = pll_get_post( $privacy_page_id, $lang );
-    $imprint_page_id = pll_get_post( $imprint_page_id, $lang );
-    $terms_page_id   = pll_get_post( $terms_page_id, $lang );    
+    $blog_page_id    = pll_get_post( $blog_page_id, $recipient->lang );
+    $privacy_page_id = pll_get_post( $privacy_page_id, $recipient->lang );
+    $imprint_page_id = pll_get_post( $imprint_page_id, $recipient->lang );
+    $terms_page_id   = pll_get_post( $terms_page_id, $recipient->lang );    
 endif;
 
 ?>
@@ -235,7 +230,7 @@ endif;
                                                         -webkit-border-radius:3px;
                                                         border-radius:3px
                                                         ">
-                                                        <a href="<?php echo get_page_link( $blog_page_id ); ?>" target="_blank" style="
+                                                        <a href="<?php echo alo_em_make_url_trackable( $recipient, get_page_link( $blog_page_id ) ); ?>" target="_blank" style="
                                                             display: inline-block;
                                                             color: #ffffff;
                                                             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -268,9 +263,9 @@ endif;
                         </p>
                         <p style="padding-top:15px;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;clear:both;text-align:center;line-height:20px;font-size:12px;color:#aaa;text-decoration:none;">
                             <?php echo $footer_sender_id ?>
-                            <a href="<?php echo get_page_link( $terms_page_id ); ?>" target="new" class="links" style="margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;clear:both;text-align:center;line-height:20px;font-size:12px;color:#aaa;text-decoration:underline;" ><?php echo get_the_title( $terms_page_id ); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="<?php echo get_page_link( $privacy_page_id ); ?>" target="new" class="links" style="margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;clear:both;text-align:center;line-height:20px;font-size:12px;color:#aaa;text-decoration:underline;" ><?php echo get_the_title( $privacy_page_id ); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="<?php echo get_page_link( $imprint_page_id ); ?>" target="new" class="links" style="margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;clear:both;text-align:center;line-height:20px;font-size:12px;color:#aaa;text-decoration:underline;" ><?php echo get_the_title( $imprint_page_id ); ?></a>
+                            <a href="<?php echo alo_em_make_url_trackable( $recipient, get_page_link( $terms_page_id ) ); ?>" target="new" class="links" style="margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;clear:both;text-align:center;line-height:20px;font-size:12px;color:#aaa;text-decoration:underline;" ><?php echo get_the_title( $terms_page_id ); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="<?php echo alo_em_make_url_trackable( $recipient, get_page_link( $privacy_page_id ) ); ?>" target="new" class="links" style="margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;clear:both;text-align:center;line-height:20px;font-size:12px;color:#aaa;text-decoration:underline;" ><?php echo get_the_title( $privacy_page_id ); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="<?php echo alo_em_make_url_trackable( $recipient, get_page_link( $imprint_page_id ) ); ?>" target="new" class="links" style="margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;clear:both;text-align:center;line-height:20px;font-size:12px;color:#aaa;text-decoration:underline;" ><?php echo get_the_title( $imprint_page_id ); ?></a>
                         </p>
                         <p align="center" style="padding-top:15px;margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;clear:both;text-align:center;line-height:20px;font-size:12px;color:#aaa;text-decoration:none;" >
                             <?php echo $footer_unsubscribe ?>
