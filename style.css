@@ -711,6 +711,10 @@ button.menu-toggle, button.menu-toggle:hover {
  *
  ********************/
 
+.widget.alo_easymail_widget {
+	font-size: .938em;
+}
+
 .alo_easymail_widget_form td, .alo_easymail_widget_form_public td {
 	background: none !important;
 	padding: 0;
@@ -726,7 +730,7 @@ button.menu-toggle, button.menu-toggle:hover {
 
 .alo_easymail_widget_error, .alo_easymail_widget_ok {
 	padding: 1em 1.618em;
-	margin: 0 0 2.618em;
+	margin: 0 0 1em;
 	color: #ffffff;
 	clear: both;
 	border: 0;
@@ -734,11 +738,15 @@ button.menu-toggle, button.menu-toggle:hover {
 }
 
 .alo_easymail_widget_error  {
-	background-color: #93979F;
+	background-color: #ff0000;
 }
 
 .alo_easymail_widget_ok {
 	background-color: #79bc32;
+}
+
+.alo_easymail_preform_msg, .alo_easymail_disclaimer {
+	margin: 0 0 1em;
 }
 
 .alo_easymail_reg_optin input {
