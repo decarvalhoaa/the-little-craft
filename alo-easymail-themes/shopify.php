@@ -30,11 +30,11 @@ $terms_page_id   = 81;
 if ( class_exists( 'ALO_EasyMail_Custom_Functions' ) && class_exists( 'Polylang' ) ) :
     $template = new ALO_EasyMail_Custom_Functions();
     
-    if ( !is_object( $recipient ) ) $recipient = new stdClass();
+    if ( !isset( $recipient ) || !is_object( $recipient ) ) $recipient = new stdClass();
 	if ( empty( $recipient->lang ) ) $recipient->lang = alo_em_short_langcode ( get_locale() );
     
     /* Translate template strings */
-    foreach ( $template->newsletter_strings as $name => $string ) {
+    foreach ( $template->strings as $name => $string ) {
         ${$name} = pll_translate_string( $string, $recipient->lang );
     }
     
