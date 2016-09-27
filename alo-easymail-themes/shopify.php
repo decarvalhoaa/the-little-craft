@@ -61,14 +61,14 @@ endif;
                 /* Full width table */
                 table[class="full-width-table"] { width:100%!important; }
                 /* Fluid images  */
-                table[class="full-width-table"] img { width: 100% !important; height: auto !important; }
+                td[class="content"] img { width: 100% !important; height: auto !important; }
             }
             
             @media only screen and (max-device-width: 480px) {
                 /* resize to mobile width */
                 table[class="full-width-table"] { width: 100% !important; min-width:0px !important; }
                 /* Fluid images  */
-                table[class="full-width-table"] img { width: 100% !important; height: auto !important; }
+                td[class="content"] img { width: 100% !important; height: auto !important; }
             }
         </style>
     </head>
