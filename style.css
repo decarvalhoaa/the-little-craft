@@ -822,7 +822,7 @@ div.wpcf7 img.ajax-loader {
 
 /*******************************************************************************
  *
- * Events Make 
+ * Events Maker
  *
  ********************/
 
@@ -873,10 +873,19 @@ div.wpcf7 img.ajax-loader {
 	border-bottom: 1px solid rgba(0,0,0,.05);
 }
 
-.archive article.event {
+.post-type-archive-event article.event {
 	padding-bottom: 2.618em;
 }
 
 .fc-day-grid-event .fc-content {
 	white-space: normal !important;
+}
+
+.post-type-archive-event .entry-date:not(:last-of-type):after,.single-event .entry-date:not(:last-of-type):after {
+	padding: 0 10px;
+	content: '|';
+}
+
+.post-type-archive-event .entry-content:not(:empty) {
+	padding-bottom: 1em;
 }
