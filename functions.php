@@ -17,6 +17,18 @@ add_action( 'wp_enqueue_scripts', 'sf_child_theme_enqueue_styles' );
 
 
 /**
+ * Define global vars
+ */
+function tlc_global_vars() {
+	global $thelittlecraft;
+	$thelittlecraft = array( 
+		'event-cat' => array( 'events', 'veranstaltungen', 'workshops', 'workshops-de' ) // Event category slugs
+	);	
+}
+add_action( 'parse_query', 'tlc_global_vars' );
+
+
+/**
  * Load custom javascript
  */
 function tlc_load_javascript_files() {
@@ -498,7 +510,6 @@ function tlc_cleanup_advance_free_shipping_label( $label, $method ) {
 add_filter( 'woocommerce_cart_shipping_method_full_label', 'tlc_cleanup_advance_free_shipping_label', 1, 2 );
 
 
-
 /**
  * Move the blog navigation and comments section, on single post pages, to after the post,
  * instead of post bottom.
@@ -559,7 +570,6 @@ add_filter( 'em_loop_event_thumbnail_size', 'tlc_em_single_event_thumnail_size',
 
 // Single Event page - Replace ligthbox with prettyphoto in the event imagery
 function tlc_em_replace_lightbox_with_prettyphoto( $hmtl, $post_id ) {
-
     $event_gallery = get_post_meta( $post_id, '_event_gallery', true );
 
     if ( !empty( $event_gallery ) )
@@ -570,22 +580,94 @@ function tlc_em_replace_lightbox_with_prettyphoto( $hmtl, $post_id ) {
 add_filter( 'em_single_event_thumbnail_html', 'tlc_em_replace_lightbox_with_prettyphoto', 10, 2 );
 add_filter( 'em_event_gallery_thumbnail_html', 'tlc_em_replace_lightbox_with_prettyphoto', 10, 2 );
 
-// Exclude Event Product from the woocommerce loop
-function tlc_custom_pre_get_posts_query( $q ) {
-    if ( ! $q->is_main_query() ) return;
-    if ( ! $q->is_post_type_archive() ) return;
+// Exclude Event Products from the woocommerce loop
+function tlc_exclude_event_products_from_shop( $query ) {
+	if ( ! $query->is_main_query() ) return;
+    if ( ! $query->is_post_type_archive() ) return;
 
     if ( ! is_admin() && is_shop() ) {
-	$q->set( 'tax_query', array( array(
-	    'taxonomy' => 'product_cat',
-	    'field' => 'slug',
-	    'terms' => array( 'events' ), // Don't display products in the events (slug) category on the shop page
-	    'operator' => 'NOT IN'
-	) ) );
+		$event_cat = isset( $GLOBALS['thelittlecraft']['event-cat'] ) ? $GLOBALS['thelittlecraft']['event-cat'] : array();
+		$query->set( 'tax_query', array( array(
+			'taxonomy' => 'product_cat',
+			'field' => 'slug',
+			'terms' => $event_cat, // Don't display products in the events (slug) categories on the shop page
+			'operator' => 'NOT IN'
+		) ) );
     }
-    remove_action( 'pre_get_posts', 'tlc_custom_pre_get_posts_query' );
 }
-add_action( 'pre_get_posts', 'tlc_custom_pre_get_posts_query' );
+add_action( 'pre_get_posts', 'tlc_exclude_event_products_from_shop' );
+
+// Exclude Event Products from WooCommerce shortcodes and widgets
+function tlc_exclude_event_products_from_wc_shortcodes_and_widgets( $args ) {	
+	$event_cat = isset( $GLOBALS['thelittlecraft']['event-cat'] ) ? $GLOBALS['thelittlecraft']['event-cat'] : array();
+	$args['tax_query'] = array( array(
+		'taxonomy' => 'product_cat',
+		'field' => 'slug',
+		'terms' => $event_cat, // Don't display products in the events (slug) categories on the shop page
+		'operator' => 'NOT IN'
+	) );
+	return $args;
+}
+add_filter( 'woocommerce_shortcode_products_query', 'tlc_exclude_event_products_from_wc_shortcodes_and_widgets' ); // Used for products shortcode
+add_filter( 'woocommerce_products_widget_query_args', 'tlc_exclude_event_products_from_wc_shortcodes_and_widgets' ); // Used for products widget
+
+// Exclude Event Categories from WooCommerce Widget Product Categories
+function tlc_exclude_event_categories_from_wc_widget_categories( $cat_args ) {
+	$event_cat = isset( $GLOBALS['thelittlecraft']['event-cat'] ) ? $GLOBALS['thelittlecraft']['event-cat'] : array();
+	
+	$exclude = array();
+	$include = array();
+	
+	// Build array of ids to exclude
+	foreach ( $event_cat as $cat ) {
+		$cat_obj = get_term_by( 'slug', $cat, 'product_cat' );
+		if ( $cat_obj ) $exclude[] = absint( $cat_obj->term_id );
+	}
+	
+	// Add to exclude list
+	if ( isset( $cat_args['exclude'] ) ) {
+		foreach ( $exclude as $cat ) {
+			if ( ! in_array( $cat, $cat_args['exclude'] ) ) {
+				$cat_args['exclude'][] = $cat;
+			}
+		}
+	} else {
+		$cat_args['exclude'] = $exclude;
+	}
+	
+	// Remove from include list
+	if ( isset( $cat_args['include'] ) ) {
+		$include = explode( ',', $cat_args['include'] );
+		foreach ( $include as $key => $cat ) {
+			if ( in_array( $cat, $exclude ) ) {
+				unset( $include[ $key ] );
+			}
+		}
+		$cat_args['include'] = implode( ',', $include );
+	}
+	
+	return $cat_args;
+}
+add_filter( 'woocommerce_product_categories_widget_dropdown_args', 'tlc_exclude_event_categories_from_wc_widget_categories' ); // Used when the widget is displayed as a dropdown
+add_filter( 'woocommerce_product_categories_widget_args', 'tlc_exclude_event_categories_from_wc_widget_categories' ); // Used when the widget is displayed as a list
+
+// Exclude Event Categories from front page
+function tlc_custom_get_terms( $terms, $taxonomies, $args ) {
+	// if a product category and not on the admin page 
+	if ( in_array( 'product_cat', $taxonomies ) && ! is_admin() && is_front_page() ) { // Can filter by other pages e.g. is_shop()
+		$event_cat = isset( $GLOBALS['thelittlecraft']['event-cat'] ) ? $GLOBALS['thelittlecraft']['event-cat'] : array();
+		$new_terms = array();
+		
+		foreach ( $terms as $key => $term ) {
+			if ( isset( $term->slug ) && ! in_array( $term->slug, $event_cat ) ) {
+				$new_terms[] = $term;
+			}
+		}
+		$terms = $new_terms;
+	}	
+	return $terms;
+}
+//add_filter( 'get_terms', 'tlc_custom_get_terms', 10, 3 );
 
 
 /**
