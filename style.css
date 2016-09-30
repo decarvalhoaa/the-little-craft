@@ -858,7 +858,8 @@ div.wpcf7 img.ajax-loader {
 }
 
 /* Miscellaneous fixes */
-.single-event .entry-thumbnail, .single-event .entry-tickets, .archive .entry-thumbnail, .archive .entry-tickets  {
+.single-event .entry-thumbnail, .single-event .entry-tickets,
+.archive .entry-thumbnail, .archive .entry-tickets  {
 	display: block;
 	margin-bottom: 1em;
 }
@@ -873,7 +874,12 @@ div.wpcf7 img.ajax-loader {
 	border-bottom: 1px solid rgba(0,0,0,.05);
 }
 
-.post-type-archive-event article.event {
+article.event .comments-link {
+	display: inline;
+	margin-bottom: 0;
+}
+
+.archive article.event {
 	padding-bottom: 2.618em;
 }
 
@@ -881,11 +887,12 @@ div.wpcf7 img.ajax-loader {
 	white-space: normal !important;
 }
 
-.post-type-archive-event .entry-date:not(:last-of-type):after,.single-event .entry-date:not(:last-of-type):after {
+article.event .entry-date:not(:last-of-type):after,
+article.event .comments-link:not(:last-of-type):after {
 	padding: 0 10px;
 	content: '|';
 }
 
-.post-type-archive-event .entry-content:not(:empty) {
+.archive .entry-content:not(:empty) {
 	padding-bottom: 1em;
 }
