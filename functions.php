@@ -22,7 +22,7 @@ add_action( 'wp_enqueue_scripts', 'sf_child_theme_enqueue_styles' );
 function tlc_global_vars() {
 	global $thelittlecraft;
 	$thelittlecraft = array( 
-		'event-cat' => array( 'events', 'veranstaltungen', 'workshops', 'workshops-de' ) // Event category slugs
+		'event-cat' => array( 'events', 'veranstaltungen', 'workshops', 'kreativkurse' ) // Event category slugs
 	);	
 }
 add_action( 'parse_query', 'tlc_global_vars' );
