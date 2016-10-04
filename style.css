@@ -69,6 +69,15 @@ mark {
 	display: none !important;
 }
 
+/* Desaturate images */
+img.desaturate {
+	-webkit-filter: grayscale(1);
+	-webkit-filter: grayscale(100%);
+	filter: gray;
+	filter: grayscale(100%);
+	filter: url(assets/desaturate.svg#greyscale);
+}
+
 
 /*******************************************************************************
  *
@@ -248,6 +257,7 @@ button.menu-toggle, button.menu-toggle:hover {
 
 .footer-widgets .textwidget .social-icons img {
 	width: 15%;
+	max-width: 45px;
 	margin: 0 5% 3% 0;
 	float: left;
 	opacity: .75;
@@ -258,7 +268,7 @@ button.menu-toggle, button.menu-toggle:hover {
 }
 
 .footer-widgets .textwidget .social-icons img:hover {
-	opacity: .95;
+	opacity: 1;
 }
 
 .footer-widgets .textwidget .footer-links a {
