@@ -256,7 +256,7 @@ button.menu-toggle, button.menu-toggle:hover {
 }
 
 .footer-widgets .textwidget .social-icons img {
-	width: 15%;
+	width: 20%;
 	max-width: 45px;
 	margin: 0 5% 3% 0;
 	float: left;
@@ -567,8 +567,15 @@ button.menu-toggle, button.menu-toggle:hover {
     color: #9d7b35 !important;
 }
 
-#payment .payment_methods li img {
-	max-height: 2.308em !important;
+/* Paypal credit card image */
+@media (min-width: 768px) {
+	#payment .payment_methods > .payment_method_paypal > label {
+		line-height: 2.5em;
+	}
+	
+	#payment .payment_methods > .payment_method_paypal img {
+		max-height: 2.5em;
+	}
 }
 
 /* Shipping prices */
