@@ -922,6 +922,11 @@ div.wpcf7 img.ajax-loader {
 	}
 }
 
+/* Remove iCal button */
+.events-maker-ical {
+	display: none;
+}
+
 /* Miscellaneous fixes */
 .single-event .entry-thumbnail, .single-event .entry-tickets,
 .archive .entry-thumbnail, .archive .entry-tickets  {
@@ -958,6 +963,6 @@ article.event .comments-link:not(:last-of-type):after {
 	content: '|';
 }
 
-.archive .entry-content:not(:empty) {
+article.event .entry-content:not(:empty) {
 	padding-bottom: 1em;
 }
