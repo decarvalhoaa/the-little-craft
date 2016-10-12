@@ -496,21 +496,6 @@ add_filter( 'woocommerce_min_password_strength', 'tlc_reduce_woocommerce_min_str
 
 
 /**
- * Remove '(Free)' label from Advance Free Shipping method title
- */
-function tlc_cleanup_advance_free_shipping_label( $label, $method ) {
-
-    if ( $method && isset( $method->id ) && $method->id == 'advanced_free_shipping' ) {
-
-	$label = isset( $method->label ) ? __( $method->label, 'woocommerce' ) : $label;
-    }
-
-    return $label;
-}
-add_filter( 'woocommerce_cart_shipping_method_full_label', 'tlc_cleanup_advance_free_shipping_label', 1, 2 );
-
-
-/**
  * Move the blog navigation and comments section, on single post pages, to after the post,
  * instead of post bottom.
  */
