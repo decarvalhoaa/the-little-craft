@@ -550,12 +550,12 @@ function tlc_em_add_and_remove_actions() {
     add_action( 'em_after_single_event_title', 'tlc_em_add_buy_tickets_button', 50 );
 }
 
+// Add Buy Tickets button
 function tlc_em_add_buy_tickets_button() {
     $post = get_post();
 
-    if ( ! empty( $post ) ) {
-	$event_product_id = get_post_meta( $post->ID, 'event_product_id', true );
-	echo '<div class="entry-meta entry-tickets buy-tickets"><a href="' . get_permalink( (int) $event_product_id ) . '" class="button">' . __( 'Buy Tickets', 'thelittlecraft' ) . '</a></div>';
+    if ( ! empty( $post ) && $event_product_id = get_post_meta( $post->ID, 'event_product_id', true ) ) {
+		echo '<div class="entry-meta entry-tickets buy-tickets"><a href="' . get_permalink( (int) $event_product_id ) . '" class="button">' . __( 'Buy Tickets', 'thelittlecraft' ) . '</a></div>';
     }
 }
 add_action( 'wp', 'tlc_em_add_and_remove_actions' );
