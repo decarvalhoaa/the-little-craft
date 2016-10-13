@@ -912,7 +912,7 @@ div.wpcf7 img.ajax-loader {
 }
 
 /* Fix calendar left & right button arrows in Edge browser */
-@supports (-ms-accelerator:true) { /* this browser detection will very likelly stop working in the future */
+@supports (-ms-ime-align:auto) { /* https://jeffclayton.wordpress.com/2015/04/07/css-hacks-for-windows-10-and-spartan-browser-preview/ */
 	.fc-icon::after {
 	margin: 0 !important;
 	}
