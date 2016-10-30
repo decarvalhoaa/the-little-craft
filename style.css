@@ -362,6 +362,12 @@ button.menu-toggle, button.menu-toggle:hover {
     color: #ee626a !important;
 }
 
+@media (min-width: 768px) {
+	.main-navigation ul ul li a, .secondary-navigation ul ul li a {
+		width: 205px;
+	}
+}
+
 /* Secondary Menu */
 @media (min-width: 768px) {
 	.secondary-navigation .menu a {
