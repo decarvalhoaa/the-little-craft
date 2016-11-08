@@ -636,10 +636,10 @@ function tlc_exclude_event_categories_from_wc_widget_categories( $cat_args ) {
 add_filter( 'woocommerce_product_categories_widget_dropdown_args', 'tlc_exclude_event_categories_from_wc_widget_categories' ); // Used when the widget is displayed as a dropdown
 add_filter( 'woocommerce_product_categories_widget_args', 'tlc_exclude_event_categories_from_wc_widget_categories' ); // Used when the widget is displayed as a list
 
-// Exclude Event Categories from front page
+// Exclude Event Categories from shop root page
 function tlc_custom_get_terms( $terms, $taxonomies, $args ) {
 	// if a product category and not on the admin page 
-	if ( in_array( 'product_cat', $taxonomies ) && ! is_admin() && is_front_page() ) { // Can filter by other pages e.g. is_shop()
+	if ( in_array( 'product_cat', $taxonomies ) && ! is_admin() && is_shop() ) { // Can filter by other pages e.g. is_front_page()
 		$event_cat = isset( $GLOBALS['thelittlecraft']['event-cat'] ) ? $GLOBALS['thelittlecraft']['event-cat'] : array();
 		$new_terms = array();
 		
@@ -652,7 +652,7 @@ function tlc_custom_get_terms( $terms, $taxonomies, $args ) {
 	}	
 	return $terms;
 }
-//add_filter( 'get_terms', 'tlc_custom_get_terms', 10, 3 );
+add_filter( 'get_terms', 'tlc_custom_get_terms', 10, 3 );
 
 
 /**
