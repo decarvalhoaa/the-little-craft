@@ -689,6 +689,31 @@ add_action( "alo_easymail_new_subscriber_added",  "tlc_easymail_auto_add_subscri
 
 
 /**
+ * Disable Storefront Parallax Hero plugin for handheld devices
+ *
+ * The google analytics indicates heavy bounce on the homepage for handheld devices.
+ * The hipotheses is that Parallax takes serious real estate on handheld devices forcing
+ * the user to extreme scrolling down to get top content.
+ */
+function tlc_disable_sph_handheld( $enabled ) {
+	// Skip if already disabled
+	if ( $enabled ) {
+		include_once( get_stylesheet_directory() . '/includes/Mobile_Detect.php');
+		$detect = new Mobile_Detect;
+		
+		if( $detect->isMobile() && !$detect->isTablet() ) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	return $enabled;
+}
+add_filter( 'storefront_parallax_hero_enabled', 'tlc_disable_sph_handheld', 100 ); 
+
+
+/**
  * Apply custom css to Admin backend
  */
 function tlc_custom_admin_css() {
