@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TheLittleCraft 1.0\n"
 "Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
-"POT-Creation-Date: 2016-01-18 13:18:14+00:00\n"
-"PO-Revision-Date: Mon May 30 2016 21:02:11 GMT+0200 (CEST)\n"
+"POT-Creation-Date: 2016-11-26 13:27+0000\n"
+"PO-Revision-Date: 2016-11-26 13:27+0000\n"
 "Last-Translator: Admin <info@thelittlecraft.com>\n"
-"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"Language: English (UK)\n"
+"Language-Team: English (UK)\n"
+"Language: en-GB\n"
 "Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Loco - https://localise.biz/\n"
@@ -22,261 +22,53 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Loco-Target-Locale: en_GB"
 
-#: ../functions.php:879
-msgid "Buy Tickets"
-msgstr "Buy Tickets"
+#: functions.php:147
+msgid "Comments not allowed."
+msgstr "Comments not allowed."
 
-#: ../includes/tlc_email-customer-credit-note.php:74
-msgid "Credit Note for order {order_number} from {order_date}"
-msgstr "Credit Note for order {order_number} from {order_date}"
+#. URI of the theme
+msgid "https://github.com/decarvalhoaa/the-little-craft"
+msgstr "https://github.com/decarvalhoaa/the-little-craft"
 
-#: ../includes/tlc_email-customer-credit-note.php:75
-msgid "Credit Note for order {order_number}"
-msgstr "Credit Note for order {order_number}"
+#. Author of the theme
+msgid "Antonio de Carvalho"
+msgstr "Antonio de Carvalho"
 
-#: ../includes/tlc_email-customer-credit-note.php:76
-msgid ""
-"A refund has been issued for your order, attached to this email you will "
-"find a credit note with the details."
-msgstr ""
-"A refund has been issued for your order, attached to this email you will "
-"find a credit note with the details."
+#. Author URI of the theme
+msgid "https://github.com/decarvalhoaa"
+msgstr "https://github.com/decarvalhoaa"
 
-#: ../woocommerce/emails/customer-new-account.php:26
-#, php-format
-msgid "Thanks for creating an account on %s. Your username is <strong>%s</strong>."
-msgstr "Thanks for creating an account on %s. Your username is <strong>%s</strong>."
-
-#: ../woocommerce/emails/customer-new-account.php:30
-#, php-format
-msgid "Your password has been automatically generated: <strong>%s</strong>"
-msgstr "Your password has been automatically generated: <strong>%s</strong>"
-
-#: ../woocommerce/emails/customer-new-account.php:34
-#, php-format
-msgid ""
-"You can access your account area to view your orders and change your "
-"password here: <a href=\"%s\">%s</a>."
-msgstr ""
-"You can access your account area to view your orders and change your "
-"password here: <a href=\"%s\">%s</a>."
-
-#: ../woocommerce/emails/customer-credit-note.php:25
-msgid "Order:"
-msgstr "Order:"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:9 ../woocommerce/pdf/tlc-no-
-#: vat/credit-note.php:45 ../woocommerce/pdf/tlc/credit-note.php:9 ..
-#: woocommerce/pdf/tlc/credit-note.php:45
-msgid "Credit Note"
-msgstr "Credit Note"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:23 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:23 ../woocommerce/pdf/tlc-no-vat/proforma.php:29 ..
-#: woocommerce/pdf/tlc-no-vat/packing-slip.php:40 ../woocommerce/pdf/tlc/credit-
-#: note.php:23 ../woocommerce/pdf/tlc/invoice.php:23 ..
-#: woocommerce/pdf/tlc/proforma.php:29 ../woocommerce/pdf/tlc/packing-slip.php:40
-msgid "Billing Address:"
-msgstr "Billing Address:"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:34 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:34 ../woocommerce/pdf/tlc-no-vat/proforma.php:40 ..
-#: woocommerce/pdf/tlc/credit-note.php:34 ../woocommerce/pdf/tlc/invoice.php:34 .
-#: ./woocommerce/pdf/tlc/proforma.php:40
-msgid "Ship To:"
-msgstr "Ship To:"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:53 ../woocommerce/pdf/tlc/credit-
-#: note.php:53
-msgid "Credit Note Number:"
-msgstr "Credit Note Number:"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:58 ../woocommerce/pdf/tlc/credit-
-#: note.php:58
-msgid "Credit Note Date:"
-msgstr "Credit Note Date:"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:63 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:65 ../woocommerce/pdf/tlc-no-vat/proforma.php:58 ..
-#: woocommerce/pdf/tlc-no-vat/packing-slip.php:48 ../woocommerce/pdf/tlc/credit-
-#: note.php:63 ../woocommerce/pdf/tlc/invoice.php:65 ..
-#: woocommerce/pdf/tlc/proforma.php:58 ../woocommerce/pdf/tlc/packing-slip.php:48
-msgid "Order Number:"
-msgstr "Order Number:"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:67 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:69 ../woocommerce/pdf/tlc-no-vat/proforma.php:62 ..
-#: woocommerce/pdf/tlc-no-vat/packing-slip.php:52 ../woocommerce/pdf/tlc/credit-
-#: note.php:67 ../woocommerce/pdf/tlc/invoice.php:69 ..
-#: woocommerce/pdf/tlc/proforma.php:62 ../woocommerce/pdf/tlc/packing-slip.php:52
-msgid "Order Date:"
-msgstr "Order Date:"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:71 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:73 ../woocommerce/pdf/tlc-no-vat/proforma.php:66 ..
-#: woocommerce/pdf/tlc/credit-note.php:71 ../woocommerce/pdf/tlc/invoice.php:73 .
-#: ./woocommerce/pdf/tlc/proforma.php:66
-msgid "Payment Method:"
-msgstr "Payment Method:"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:88 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:91 ../woocommerce/pdf/tlc-no-vat/proforma.php:80 ..
-#: woocommerce/pdf/tlc-no-vat/packing-slip.php:70 ../woocommerce/pdf/tlc/credit-
-#: note.php:88 ../woocommerce/pdf/tlc/invoice.php:91 ..
-#: woocommerce/pdf/tlc/proforma.php:80 ../woocommerce/pdf/tlc/packing-slip.php:70
-msgid "Product"
-msgstr "Product"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:89 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:92 ../woocommerce/pdf/tlc-no-vat/proforma.php:81 ..
-#: woocommerce/pdf/tlc-no-vat/packing-slip.php:71 ../woocommerce/pdf/tlc/credit-
-#: note.php:89 ../woocommerce/pdf/tlc/invoice.php:92 ..
-#: woocommerce/pdf/tlc/proforma.php:81 ../woocommerce/pdf/tlc/packing-slip.php:71
-msgid "Quantity"
-msgstr "Quantity"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:90 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:93 ../woocommerce/pdf/tlc-no-vat/proforma.php:82 ..
-#: woocommerce/pdf/tlc/credit-note.php:90 ../woocommerce/pdf/tlc/invoice.php:93 .
-#: ./woocommerce/pdf/tlc/proforma.php:82
-msgid "Price"
-msgstr "Price"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:91 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:94 ../woocommerce/pdf/tlc/credit-note.php:92 ..
-#: woocommerce/pdf/tlc/invoice.php:95
-msgid "Total"
-msgstr "Total"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:98 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:102 ../woocommerce/pdf/tlc-no-vat/proforma.php:89 ..
-#: woocommerce/pdf/tlc-no-vat/packing-slip.php:78 ../woocommerce/pdf/tlc/credit-
-#: note.php:99 ../woocommerce/pdf/tlc/invoice.php:103 ..
-#: woocommerce/pdf/tlc/proforma.php:89 ../woocommerce/pdf/tlc/packing-slip.php:78
-msgid "Description"
-msgstr "Description"
-
-#: ../woocommerce/pdf/tlc-no-vat/credit-note.php:115 ..
-#: woocommerce/pdf/tlc/credit-note.php:122
-msgid "Reason for refund"
-msgstr "Reason for refund"
-
-#: ../woocommerce/pdf/tlc-no-vat/invoice.php:9 ../woocommerce/pdf/tlc-no-
-#: vat/invoice.php:45 ../woocommerce/pdf/tlc/invoice.php:9 ..
-#: woocommerce/pdf/tlc/invoice.php:45
-msgid "Invoice"
-msgstr "Invoice"
-
-#: ../woocommerce/pdf/tlc-no-vat/invoice.php:54 ../woocommerce/pdf/tlc/invoice.
-#: php:54
-msgid "Invoice Number:"
-msgstr "Invoice Number:"
-
-#: ../woocommerce/pdf/tlc-no-vat/invoice.php:60 ../woocommerce/pdf/tlc/invoice.
-#: php:60
-msgid "Invoice Date:"
-msgstr "Invoice Date:"
-
-#: ../woocommerce/pdf/tlc-no-vat/invoice.php:81 ../woocommerce/pdf/tlc/invoice.
-#: php:81
-msgid "Thank you for your order"
-msgstr "Thank you for your order"
-
-#: ../woocommerce/pdf/tlc-no-vat/invoice.php:119 ../woocommerce/pdf/tlc-no-
-#: vat/proforma.php:110 ../woocommerce/pdf/tlc-no-vat/packing-slip.php:99 ..
-#: woocommerce/pdf/tlc/invoice.php:126 ../woocommerce/pdf/tlc/proforma.php:110 ..
-#: woocommerce/pdf/tlc/packing-slip.php:99
-msgid "Customer Notes"
-msgstr "Customer Notes"
-
-#: ../woocommerce/pdf/tlc-no-vat/proforma.php:9 ../woocommerce/pdf/tlc-no-
-#: vat/proforma.php:21 ../woocommerce/pdf/tlc/proforma.php:9 ..
-#: woocommerce/pdf/tlc/proforma.php:21
-msgid "Proforma Invoice"
-msgstr "Proforma Invoice"
-
-#: ../woocommerce/pdf/tlc-no-vat/proforma.php:48 ../woocommerce/pdf/tlc/proforma.
-#: php:48
-msgid "Proforma Invoice Number:"
-msgstr "Proforma Invoice Number:"
-
-#: ../woocommerce/pdf/tlc-no-vat/proforma.php:53 ../woocommerce/pdf/tlc/proforma.
-#: php:53
-msgid "Proforma Invoice Date:"
-msgstr "Proforma Invoice Date:"
-
-#: ../woocommerce/pdf/tlc-no-vat/proforma.php:94 ../woocommerce/pdf/tlc-no-
-#: vat/packing-slip.php:83 ../woocommerce/pdf/tlc/credit-note.php:104 ..
-#: woocommerce/pdf/tlc/invoice.php:108 ../woocommerce/pdf/tlc/proforma.php:94 ..
-#: woocommerce/pdf/tlc/packing-slip.php:83
-msgid "SKU"
-msgstr "SKU"
-
-#: ../woocommerce/pdf/tlc-no-vat/proforma.php:95 ../woocommerce/pdf/tlc-no-
-#: vat/packing-slip.php:84 ../woocommerce/pdf/tlc/credit-note.php:105 ..
-#: woocommerce/pdf/tlc/invoice.php:109 ../woocommerce/pdf/tlc/proforma.php:95 ..
-#: woocommerce/pdf/tlc/packing-slip.php:84
-msgid "SKU:"
-msgstr "SKU:"
-
-#: ../woocommerce/pdf/tlc-no-vat/proforma.php:96 ../woocommerce/pdf/tlc-no-
-#: vat/packing-slip.php:85 ../woocommerce/pdf/tlc/credit-note.php:106 ..
-#: woocommerce/pdf/tlc/invoice.php:110 ../woocommerce/pdf/tlc/proforma.php:96 ..
-#: woocommerce/pdf/tlc/packing-slip.php:85
-msgid "Weight:"
-msgstr "Weight:"
-
-#: ../woocommerce/pdf/tlc-no-vat/packing-slip.php:9 ../woocommerce/pdf/tlc-no-
-#: vat/packing-slip.php:21 ../woocommerce/pdf/tlc/packing-slip.php:9 ..
-#: woocommerce/pdf/tlc/packing-slip.php:21
-msgid "Packing Slip"
-msgstr "Packing Slip"
-
-#: ../woocommerce/pdf/tlc-no-vat/packing-slip.php:29 ..
-#: woocommerce/pdf/tlc/packing-slip.php:29
-msgid "Shipping Address:"
-msgstr "Shipping Address:"
-
-#: ../woocommerce/pdf/tlc-no-vat/packing-slip.php:56 ..
-#: woocommerce/pdf/tlc/packing-slip.php:56
-msgid "Shipping Method:"
-msgstr "Shipping Method:"
-
-#: ../woocommerce/pdf/tlc/credit-note.php:91 ../woocommerce/pdf/tlc/invoice.php:94
-msgid "VAT"
-msgstr "VAT"
-
-#: ../functions.php:142
+#: functions.php:175
 msgid "Confirm email address"
 msgstr "Confirm email address"
 
-#: ../functions.php:152
+#: functions.php:185
 msgid "Please enter a valid account username."
 msgstr "Please enter a valid account username."
 
-#: ../functions.php:155
+#: functions.php:188
 msgid "Please provide a valid email address."
 msgstr "Please provide a valid email address."
 
-#: ../functions.php:158
+#: functions.php:191
 msgid "Please confirm your email address by re-typing your email address."
 msgstr "Please confirm your email address by re-typing your email address."
 
-#: ../functions.php:161
+#: functions.php:194
 msgid "The email addresses do not match."
 msgstr "The email addresses do not match."
 
-#: ../functions.php:164
+#: functions.php:197
 msgid "Please enter an account password."
 msgstr "Please enter an account password."
 
-#: ../functions.php:167
+#: functions.php:200
 msgid "You must accept our Terms &amp; Conditions."
 msgstr ""
 "You must accept our <strong>Terms of Use</strong> and <strong>Privacy "
 "Policy</strong>."
 
-#: ../functions.php:182
+#: functions.php:215
 msgid ""
 "Thanks for registering with us. Your <strong>password</strong> was emailed "
 "to you.<br>Check your email inbox and return to this page to login with your "
@@ -286,7 +78,7 @@ msgstr ""
 "to you.<br>Check your email inbox and return to this page to login with your "
 "username and password."
 
-#: ../functions.php:183
+#: functions.php:216
 msgid ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
@@ -294,52 +86,36 @@ msgstr ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
 
-#: ../functions.php:199
+#: functions.php:232
 msgid "Confirm Email Address"
 msgstr "Confirm Email Address"
 
-#: ../functions.php:200
+#: functions.php:233
 msgctxt "placeholder"
 msgid "Retype Email Address"
 msgstr "Retype Email Address"
 
-#: ../functions.php:230
-msgid ""
-"The <strong>Email Address</strong> and <strong>Confirm Email "
-"Address</strong> do not match."
-msgstr ""
-"The <strong>Email Address</strong> and <strong>Confirm Email "
-"Address</strong> do not match."
-
-#: ../functions.php:295
+#: functions.php:328
 msgid "&nbsp;Required field"
 msgstr "&nbsp;Required field"
 
-#: ../woocommerce/checkout/terms.php:16
+#: functions.php:564
+msgid "Buy Tickets"
+msgstr "Buy Tickets"
+
+#: woocommerce/checkout/terms.php:16
 #, php-format
 msgid ""
 "I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">Terms &amp; "
 "Conditions</a> and <a href=\"%s\" target=\"_blank\">Privacy Policy</a>"
 msgstr ""
-"I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">Terms of Use</a> "
-"and <a href=\"%s\" target=\"_blank\">Privacy Policy</a>"
+"I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">Terms of "
+"Use</a> and <a href=\"%s\" target=\"_blank\">Privacy Policy</a>"
 
 #. Name of the theme
 msgid "Storefront Child Theme"
 msgstr "Storefront Child Theme"
 
-#. Theme URI of the theme
-msgid "https://github.com/stuartduff/storefront-child-theme"
-msgstr "https://github.com/stuartduff/storefront-child-theme"
-
 #. Description of the theme
 msgid "This is a blank child theme for WooThemes StoreFront theme"
 msgstr "This is a blank child theme for WooThemes StoreFront theme"
-
-#. Author of the theme
-msgid "Stuart Duff"
-msgstr "Stuart Duff"
-
-#. Author URI of the theme
-msgid "http://stuartduff.com"
-msgstr "http://stuartduff.com"
