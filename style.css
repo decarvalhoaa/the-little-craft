@@ -450,6 +450,13 @@ button.menu-toggle, button.menu-toggle:hover {
 	background-color: #ffffff !important;
 }
 
+/* Reduce site title size for handheld devices with small screens */
+@media (max-width: 358px) {
+	.site-branding .site-title {
+		font-size: 1.75em !important;
+	}
+}
+
 /*******************************************************************************
  *
  * Body
