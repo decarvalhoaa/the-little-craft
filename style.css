@@ -888,14 +888,14 @@ div.wpcf7-response-output {
 }
 
 /* Move ajax-loader image to the right of the submit button */
-div.wpcf7 img.ajax-loader {
+div.wpcf7 .ajax-loader {
 	margin-left: 10px;
 	display: inline-block;
 }
 
 /* Terms Checkbox */
 span.wpcf7-list-item {
-	margin: 0 .618em 0 0 !important;
+	margin: 0 .618em 0 5px !important;
 }
 
 
