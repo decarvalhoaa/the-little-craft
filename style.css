@@ -894,8 +894,8 @@ div.wpcf7 .ajax-loader {
 }
 
 /* Terms Checkbox */
-span.wpcf7-list-item {
-	margin: 0 .618em 0 5px !important;
+span.checkbox-terms {
+	margin: 0 .618em 0 0;
 }
 
 
