@@ -481,7 +481,7 @@ button.menu-toggle, button.menu-toggle:hover {
 	display: inline-block;
 	width: auto;
 	float: left;
-	margin: .327em .53em 0 0;
+	margin: .327em 0 0;
 }
 
 .terms label {
@@ -489,10 +489,18 @@ button.menu-toggle, button.menu-toggle:hover {
 	margin-left: .618em;
 }
 
+#payment .terms label {
+	margin-left: 0 !important;
+}
+
 /* Correct position of the Remember me checkbox in the login form */
 .form-row label.inline {
 	display: inline;
 	margin-left: 1em;
+}
+
+.form-row label.inline input {
+	margin-right: .618em;
 }
 
 /* Style Small Business VAT notice */
@@ -816,7 +824,7 @@ button.menu-toggle, button.menu-toggle:hover {
 }
 
 .alo_easymail_reg_optin input {
-	margin: .327em .53em 0 0;
+	margin: .327em 0 0;
 	float: left;
 }
 
@@ -883,6 +891,11 @@ div.wpcf7-response-output {
 div.wpcf7 img.ajax-loader {
 	margin-left: 10px;
 	display: inline-block;
+}
+
+/* Terms Checkbox */
+span.wpcf7-list-item {
+	margin: 0 .618em 0 0 !important;
 }
 
 
