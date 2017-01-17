@@ -984,7 +984,7 @@ article.event .entry-content:not(:empty) {
 
 /*******************************************************************************
  *
- * Storefront Parallax Hero
+ * Storefront Parallax & Product Hero
  *
  ********************/
 
@@ -1000,9 +1000,14 @@ article.event .entry-content:not(:empty) {
 	border-color: #ee6260 !important;
 }
 
-/* Hide Parallax Hero for handheld devices with small screens */
+/* Hide Parallax & Product Hero for handheld devices with small screens */
 @media (max-width:768px) {
-	.sph-hero {
+	.sph-hero, .sprh-hero {
 		display: none;
 	}
+}
+
+/* Hide Product Hero More-Details button on product categories */
+.tax-product_cat .sprh-hero .more-details {
+	display: none;
 }
