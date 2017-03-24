@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TheLittleCraft 1.0\n"
 "Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
-"POT-Creation-Date: 2016-11-26 13:28+0000\n"
-"PO-Revision-Date: 2016-11-26 13:29+0000\n"
+"POT-Creation-Date: 2017-03-24 12:39+0000\n"
+"PO-Revision-Date: 2017-03-24 12:42+0000\n"
 "Last-Translator: Admin <info@thelittlecraft.com>\n"
 "Language-Team: German\n"
 "Language: de-DE\n"
@@ -22,41 +22,45 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Loco-Target-Locale: de_DE"
 
-#: functions.php:147
-msgid "Comments not allowed."
-msgstr "Kommentare nicht erlaubt."
+#: functions.php:242
+msgid ""
+"The <strong>Email Address</strong> and <strong>Confirm Email Address</strong>"
+" do not match."
+msgstr ""
+"Die <strong>E-Mail-Adresse</strong> und die <strong>E-Mail-Adresse "
+"bestätigen</strong> stimmen nicht überein."
 
-#: functions.php:175
+#: functions.php:154
 msgid "Confirm email address"
 msgstr "E-Mail-Adresse bestätigen"
 
-#: functions.php:185
+#: functions.php:164
 msgid "Please enter a valid account username."
 msgstr "Bitte gib einen gültige Benutzernamen ein."
 
-#: functions.php:188
+#: functions.php:167
 msgid "Please provide a valid email address."
 msgstr "Bitte gib eine gültige E-Mail-Adresse an."
 
-#: functions.php:191
+#: functions.php:170
 msgid "Please confirm your email address by re-typing your email address."
 msgstr "Bitte bestätige deine E-Mail-Adresse, indem du diese erneut eingibst."
 
-#: functions.php:194
+#: functions.php:173
 msgid "The email addresses do not match."
 msgstr "Die E-Mail-Adressen stimmen nicht überein."
 
-#: functions.php:197
+#: functions.php:176
 msgid "Please enter an account password."
 msgstr "Bitte gib ein Passwort für das Konto ein."
 
-#: functions.php:200
+#: functions.php:179
 msgid "You must accept our Terms &amp; Conditions."
 msgstr ""
 "Die Zustimmung zu unseren <strong>Allgemeinen Geschäftsbedingungen (AGB)"
 "</strong> und <strong>Datenschutzerklärung</strong> ist erforderlich."
 
-#: functions.php:215
+#: functions.php:194
 msgid ""
 "Thanks for registering with us. Your <strong>password</strong> was emailed "
 "to you.<br>Check your email inbox and return to this page to login with your "
@@ -67,7 +71,7 @@ msgstr ""
 "deinen Posteingang und kehre zu dieser Seite zurück, um dich mit deinem "
 "Benutzernamen und Passwort anzumelden."
 
-#: functions.php:216
+#: functions.php:195
 msgid ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
@@ -75,20 +79,20 @@ msgstr ""
 "<strong>Hinweis:</strong> Wenn du die E-Mail mit dem Passwort in deinem "
 "Posteingang nicht findest, überprüfe bitte deinen Spam- oder Junk-Ordner."
 
-#: functions.php:232
+#: functions.php:211
 msgid "Confirm Email Address"
 msgstr "E-Mail-Adresse bestätigen"
 
-#: functions.php:233
+#: functions.php:212
 msgctxt "placeholder"
 msgid "Retype Email Address"
 msgstr "Bitte gib deine Emai-Adresse erneut ein"
 
-#: functions.php:328
+#: functions.php:307
 msgid "&nbsp;Required field"
 msgstr "&nbsp;Pflichtfeld"
 
-#: functions.php:564
+#: functions.php:543
 msgid "Buy Tickets"
 msgstr "Tickets kaufen"
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TheLittleCraft 1.0\n"
 "Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
-"POT-Creation-Date: 2016-11-26 13:27+0000\n"
-"PO-Revision-Date: 2016-11-26 13:27+0000\n"
+"POT-Creation-Date: 2017-03-24 12:38+0000\n"
+"PO-Revision-Date: 2017-03-24 12:39+0000\n"
 "Last-Translator: Admin <info@thelittlecraft.com>\n"
 "Language-Team: English (UK)\n"
 "Language: en-GB\n"
@@ -22,10 +22,6 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Loco-Target-Locale: en_GB"
 
-#: functions.php:147
-msgid "Comments not allowed."
-msgstr "Comments not allowed."
-
 #. URI of the theme
 msgid "https://github.com/decarvalhoaa/the-little-craft"
 msgstr "https://github.com/decarvalhoaa/the-little-craft"
@@ -38,37 +34,37 @@ msgstr "Antonio de Carvalho"
 msgid "https://github.com/decarvalhoaa"
 msgstr "https://github.com/decarvalhoaa"
 
-#: functions.php:175
+#: functions.php:154
 msgid "Confirm email address"
 msgstr "Confirm email address"
 
-#: functions.php:185
+#: functions.php:164
 msgid "Please enter a valid account username."
 msgstr "Please enter a valid account username."
 
-#: functions.php:188
+#: functions.php:167
 msgid "Please provide a valid email address."
 msgstr "Please provide a valid email address."
 
-#: functions.php:191
+#: functions.php:170
 msgid "Please confirm your email address by re-typing your email address."
 msgstr "Please confirm your email address by re-typing your email address."
 
-#: functions.php:194
+#: functions.php:173
 msgid "The email addresses do not match."
 msgstr "The email addresses do not match."
 
-#: functions.php:197
+#: functions.php:176
 msgid "Please enter an account password."
 msgstr "Please enter an account password."
 
-#: functions.php:200
+#: functions.php:179
 msgid "You must accept our Terms &amp; Conditions."
 msgstr ""
 "You must accept our <strong>Terms of Use</strong> and <strong>Privacy "
 "Policy</strong>."
 
-#: functions.php:215
+#: functions.php:194
 msgid ""
 "Thanks for registering with us. Your <strong>password</strong> was emailed "
 "to you.<br>Check your email inbox and return to this page to login with your "
@@ -78,7 +74,7 @@ msgstr ""
 "to you.<br>Check your email inbox and return to this page to login with your "
 "username and password."
 
-#: functions.php:216
+#: functions.php:195
 msgid ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
@@ -86,20 +82,28 @@ msgstr ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
 
-#: functions.php:232
+#: functions.php:211
 msgid "Confirm Email Address"
 msgstr "Confirm Email Address"
 
-#: functions.php:233
+#: functions.php:212
 msgctxt "placeholder"
 msgid "Retype Email Address"
 msgstr "Retype Email Address"
 
-#: functions.php:328
+#: functions.php:242
+msgid ""
+"The <strong>Email Address</strong> and <strong>Confirm Email Address</strong>"
+" do not match."
+msgstr ""
+"The <strong>Email Address</strong> and <strong>Confirm Email Address</strong>"
+" do not match."
+
+#: functions.php:307
 msgid "&nbsp;Required field"
 msgstr "&nbsp;Required field"
 
-#: functions.php:564
+#: functions.php:543
 msgid "Buy Tickets"
 msgstr "Buy Tickets"
 

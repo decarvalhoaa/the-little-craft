@@ -110,23 +110,22 @@ add_action( 'after_setup_theme', function () {
 function tlc_init_wc_session_cookie() {
     // Test if WooCommerce is activated
     if ( did_action( 'woocommerce_loaded' ) ) {
-		// List of page ids, titles or slugs that require WooCommerce session
-		// creation (array of comma separated strings)
-		$session_pages = array( 'my-account', 'mein-konto' );
-	
-		// Check the current page against the session_pages list and instantiate the
-		// session if the page is in the list and the user is not already logged in.
-		// If the session already exists from having created a cart, WooCommerce will
-		// not destroy the active session
-		if ( is_page( $session_pages ) && ! is_user_logged_in() ) {
-			global $woocommerce;
-	
-			$woocommerce->session->set_customer_session_cookie( true );
-		}
+	// List of page ids, titles or slugs that require WooCommerce session
+	// creation (array of comma separated strings)
+	$session_pages = array( 'my-account', 'mein-konto' );
+
+	// Check the current page against the session_pages list and instantiate the
+	// session if the page is in the list and the user is not already logged in.
+	// If the session already exists from having created a cart, WooCommerce will
+	// not destroy the active session
+	if ( is_page( $session_pages ) && ! is_user_logged_in() ) {
+	    global $woocommerce;
+
+	    $woocommerce->session->set_customer_session_cookie( true );
+	}
     }
 }
 add_action( 'wp', 'tlc_init_wc_session_cookie' );
-
 
 /**
  * Remove WooCommerce review tab - removes the ability to write reviews and rate
@@ -137,26 +136,6 @@ function tlc_remove_woocommerce_reviews_tab( $tabs ) {
     return $tabs;
 }
 //add_filter( 'woocommerce_product_tabs', 'tlc_remove_woocommerce_reviews_tab', 98 );
-
-
-/**
- * Disable comments on media pages
- */
-function tlc_disable_media_comments( $post_id ) {
-	if( get_post_type( $post_id ) == 'attachment' ) {
-		wp_die( __( 'Comments not allowed.', 'thelittlecraft' ) );		
-	}
-	return $open;
-}
-add_action( 'pre_comment_on_post', 'tlc_disable_media_comments' );
-
-function tlc_remove_media_comment_form( $open, $post_id ) {
-	if( get_post_type( $post_id ) == 'attachment' ) {
-		return false;
-	}
-	return $open;
-}
-add_filter( 'comments_open', 'tlc_remove_media_comment_form', 10 , 2 );
 
 
 /**
@@ -260,7 +239,7 @@ add_filter( 'woocommerce_billing_fields' , 'tlc_woocommerce_billing_fields', 10 
 
 function tlc_custom_checkout_field_process() {
     if ( isset( $_POST['billing_email'] ) && ! empty( $_POST['billing_email'] ) && isset( $_POST['billing_email-2'] ) && ! empty( $_POST['billing_email-2'] ) && strcmp( $_POST['billing_email'], $_POST['billing_email-2'] ) !== 0 ) {
-	wc_add_notice( __( 'The <strong>Email Address</strong> and <strong>Confirm Email Address</strong> do not match.' ), 'error' );
+	wc_add_notice( __( 'The <strong>Email Address</strong> and <strong>Confirm Email Address</strong> do not match.', 'thelittlecraft' ), 'error' );
     }
 }
 add_action('woocommerce_checkout_process', 'tlc_custom_checkout_field_process', 10 );
