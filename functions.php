@@ -163,17 +163,6 @@ function tlc_register_form_terms() {
 }
 add_action( 'register_form', 'tlc_register_form_terms', 10 );
 
-function tlc_woocommerce_register_form() {
-    ?>
-    <p class="form-row form-row-wide">
-	    <label for="reg_password2"><?php _e( 'Confirm email address', 'thelittlecraft' ); ?> <span class="required">*</span></label>
-	    <input type="email" class="input-text" name="email2" id="reg_email2" value="<?php if ( ! empty( $_POST['email2'] ) ) echo esc_attr( $_POST['email2'] ); ?>" />
-    </p>
-    <?php
-    wc_get_template( 'checkout/terms.php' );
-}
-add_action( 'woocommerce_register_form', 'tlc_woocommerce_register_form' );
-
 function tlc_validation_registration( $error, $username, $password, $email ) {
     if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) && empty( $username ) ) {
     	$error->add('error', __( 'Please enter a valid account username.', 'thelittlecraft' ) );
