@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TheLittleCraft 1.0\n"
+"Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
+"POT-Creation-Date: 2016-09-07 20:24+0000\n"
+"PO-Revision-Date: 2016-09-07 20:25+0000\n"
+"Last-Translator: Admin <info@thelittlecraft.com>\n"
+"Language-Team: German\n"
+"Language: de-DE\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../../storefront-child-theme-master\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: de_DE"
+
+#. URI of the theme
+msgid "https://github.com/decarvalhoaa/the-little-craft"
+msgstr "https://github.com/decarvalhoaa/the-little-craft"
+
+#. Author of the theme
+msgid "Antonio de Carvalho"
+msgstr "Antonio de Carvalho"
+
+#. Author URI of the theme
+msgid "https://github.com/decarvalhoaa"
+msgstr "https://github.com/decarvalhoaa"
+
+#: functions.php:142
+msgid "Confirm email address"
+msgstr "E-Mail-Adresse bestätigen"
+
+#: functions.php:152
+msgid "Please enter a valid account username."
+msgstr "Bitte gib einen gültige Benutzernamen ein."
+
+#: functions.php:155
+msgid "Please provide a valid email address."
+msgstr "Bitte gib eine gültige E-Mail-Adresse an."
+
+#: functions.php:158
+msgid "Please confirm your email address by re-typing your email address."
+msgstr "Bitte bestätige deine E-Mail-Adresse, indem du diese erneut eingibst."
+
+#: functions.php:161
+msgid "The email addresses do not match."
+msgstr "Die E-Mail-Adressen stimmen nicht überein."
+
+#: functions.php:164
+msgid "Please enter an account password."
+msgstr "Bitte gib ein Passwort für das Konto ein."
+
+#: functions.php:167
+msgid "You must accept our Terms &amp; Conditions."
+msgstr ""
+"Die Zustimmung zu unseren <strong>Allgemeinen Geschäftsbedingungen (AGB)"
+"</strong> und <strong>Datenschutzerklärung</strong> ist erforderlich."
+
+#: functions.php:182
+msgid ""
+"Thanks for registering with us. Your <strong>password</strong> was emailed "
+"to you.<br>Check your email inbox and return to this page to login with your "
+"username and password."
+msgstr ""
+"Vielen Dank, dass du ein Konto bei uns erstellt hast. Dein <strong>"
+"Passwort</ strong> wurde dich per E-Mail geschickt.<br>Bitte überprüfe "
+"deinen Posteingang und kehre zu dieser Seite zurück, um dich mit deinem "
+"Benutzernamen und Passwort anzumelden."
+
+#: functions.php:183
+msgid ""
+"<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
+"in your inbox, check your spam or junk folder."
+msgstr ""
+"<strong>Hinweis:</strong> Wenn du die E-Mail mit dem Passwort in deinem "
+"Posteingang nicht findest, überprüfe bitte deinen Spam- oder Junk-Ordner."
+
+#: functions.php:199
+msgid "Confirm Email Address"
+msgstr "E-Mail-Adresse bestätigen"
+
+#: functions.php:200
+msgctxt "placeholder"
+msgid "Retype Email Address"
+msgstr "Bitte gib deine Emai-Adresse erneut ein"
+
+#: functions.php:295
+msgid "&nbsp;Required field"
+msgstr "&nbsp;Pflichtfeld"
+
+#: functions.php:675
+msgid "Buy Tickets"
+msgstr "Tickets kaufen"
+
+#: woocommerce/emails/customer-new-account.php:34
+msgid ""
+"You can access your account area to view your orders and change your "
+"password here: <a href=\"%s\">%s</a>."
+msgstr ""
+"Um Bestellungen anzusehen oder dein Passwort zu ändern, melde dich hier in "
+"deinem Benutzerkonto an: <a href=\"%s\">%s</a>."
+
+#: woocommerce/checkout/terms.php:16
+msgid ""
+"I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">Terms &amp; "
+"Conditions</a> and <a href=\"%s\" target=\"_blank\">Privacy Policy</a>"
+msgstr ""
+"Ich habe die <a href=\"%s\" target=\"_blank\">Allgemeinen "
+"Geschäftsbedingungen</a> und <a href=\"%s\" target=\"_blank\">"
+"Datenschutzerklärung</a> gelesen und bestätige diese hiermit."
+
+#. Name of the theme
+msgid "Storefront Child Theme"
+msgstr "Storefront Child Theme"
+
+#. Description of the theme
+msgid "This is a blank child theme for WooThemes StoreFront theme"
+msgstr "Dieses ist eine leer Child-Theme für WooThemes Storefront Theme"
