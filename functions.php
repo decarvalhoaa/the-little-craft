@@ -148,16 +148,20 @@ function tlc_remove_woocommerce_reviews_tab( $tabs ) {
  *   page
  */
 // Add repeat email field and terms checkbox
-function tlc_woocommerce_register_form() {
+function tlc_woocommerce_register_form_email2() {
     ?>
     <p class="form-row form-row-wide">
-	    <label for="reg_password2"><?php _e( 'Confirm email address', 'thelittlecraft' ); ?> <span class="required">*</span></label>
+	    <label for="reg_email2"><?php _e( 'Confirm email address', 'thelittlecraft' ); ?> <span class="required">*</span></label>
 	    <input type="email" class="input-text" name="email2" id="reg_email2" value="<?php if ( ! empty( $_POST['email2'] ) ) echo esc_attr( $_POST['email2'] ); ?>" />
     </p>
     <?php
+}
+add_action( 'woocommerce_register_form', 'tlc_woocommerce_register_form_email2' );
+
+function tlc_register_form_terms() {
     wc_get_template( 'checkout/terms.php' );
 }
-add_action( 'woocommerce_register_form', 'tlc_woocommerce_register_form' );
+add_action( 'register_form', 'tlc_register_form_terms', 10 );
 
 function tlc_validation_registration( $error, $username, $password, $email ) {
     if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) && empty( $username ) ) {

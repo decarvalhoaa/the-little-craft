@@ -1011,3 +1011,15 @@ article.event .entry-content:not(:empty) {
 .tax-product_cat .sprh-hero .more-details {
 	display: none;
 }
+
+
+/*******************************************************************************
+ *
+ * WP-SpamShield
+ *
+ ********************/
+
+/* Hide First Name and Last Name fields in WC Registration form */
+p.form-row label[for="first_name"], p.form-row label[for="last_name"], p.form-row input[name="first_name"], p.form-row input[name="last_name"]  {
+	display: none;
+}
