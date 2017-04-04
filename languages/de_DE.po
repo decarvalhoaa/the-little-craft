@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TheLittleCraft 1.0\n"
 "Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
-"POT-Creation-Date: 2017-03-24 12:39+0000\n"
-"PO-Revision-Date: 2017-03-24 12:42+0000\n"
+"POT-Creation-Date: 2017-04-04 21:04+0000\n"
+"PO-Revision-Date: 2017-04-04 21:04+0000\n"
 "Last-Translator: Admin <info@thelittlecraft.com>\n"
 "Language-Team: German\n"
 "Language: de-DE\n"
@@ -22,45 +22,37 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Loco-Target-Locale: de_DE"
 
-#: functions.php:242
-msgid ""
-"The <strong>Email Address</strong> and <strong>Confirm Email Address</strong>"
-" do not match."
-msgstr ""
-"Die <strong>E-Mail-Adresse</strong> und die <strong>E-Mail-Adresse "
-"bestätigen</strong> stimmen nicht überein."
-
-#: functions.php:154
+#: functions.php:152
 msgid "Confirm email address"
 msgstr "E-Mail-Adresse bestätigen"
 
-#: functions.php:164
+#: functions.php:166
 msgid "Please enter a valid account username."
 msgstr "Bitte gib einen gültige Benutzernamen ein."
 
-#: functions.php:167
+#: functions.php:169
 msgid "Please provide a valid email address."
 msgstr "Bitte gib eine gültige E-Mail-Adresse an."
 
-#: functions.php:170
+#: functions.php:172
 msgid "Please confirm your email address by re-typing your email address."
 msgstr "Bitte bestätige deine E-Mail-Adresse, indem du diese erneut eingibst."
 
-#: functions.php:173
+#: functions.php:175
 msgid "The email addresses do not match."
 msgstr "Die E-Mail-Adressen stimmen nicht überein."
 
-#: functions.php:176
+#: functions.php:178
 msgid "Please enter an account password."
 msgstr "Bitte gib ein Passwort für das Konto ein."
 
-#: functions.php:179
+#: functions.php:181
 msgid "You must accept our Terms &amp; Conditions."
 msgstr ""
 "Die Zustimmung zu unseren <strong>Allgemeinen Geschäftsbedingungen (AGB)"
 "</strong> und <strong>Datenschutzerklärung</strong> ist erforderlich."
 
-#: functions.php:194
+#: functions.php:196
 msgid ""
 "Thanks for registering with us. Your <strong>password</strong> was emailed "
 "to you.<br>Check your email inbox and return to this page to login with your "
@@ -71,7 +63,7 @@ msgstr ""
 "deinen Posteingang und kehre zu dieser Seite zurück, um dich mit deinem "
 "Benutzernamen und Passwort anzumelden."
 
-#: functions.php:195
+#: functions.php:197
 msgid ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
@@ -79,20 +71,54 @@ msgstr ""
 "<strong>Hinweis:</strong> Wenn du die E-Mail mit dem Passwort in deinem "
 "Posteingang nicht findest, überprüfe bitte deinen Spam- oder Junk-Ordner."
 
-#: functions.php:211
+#: functions.php:213
 msgid "Confirm Email Address"
 msgstr "E-Mail-Adresse bestätigen"
 
-#: functions.php:212
+#: functions.php:214
 msgctxt "placeholder"
 msgid "Retype Email Address"
 msgstr "Bitte gib deine Emai-Adresse erneut ein"
 
-#: functions.php:307
+#: functions.php:244
+msgid ""
+"The <strong>Email Address</strong> and <strong>Confirm Email Address</strong>"
+" do not match."
+msgstr ""
+"Die <strong>E-Mail-Adresse</strong> und die <strong>E-Mail-Adresse "
+"bestätigen</strong> stimmen nicht überein."
+
+#: functions.php:303
 msgid "&nbsp;Required field"
 msgstr "&nbsp;Pflichtfeld"
 
-#: functions.php:543
+#: functions.php:352
+msgid "SPECIAL OFFER: Free shipping for Germany for orders above 29 €!"
+msgstr ""
+"AKTUELLES ANGEBOT: Versandkostenfreie Lieferung für Bestellungen ab 29 € "
+"innerhalb von Deutschland!"
+
+#: functions.php:391
+#, php-format
+msgid ""
+"* All stated prices are final prices excl. <a href=\"%s\" target=\"_blank\">"
+"Shipping</a>, exempt from VAT according to Art. 19 of the German VAT law "
+"(UStG)."
+msgstr ""
+"* Alle angegebenen Preise sind Endpreise zzgl. <a href=\"%s\" "
+"target=\"_blank\">Versandkosten</a>, keine Ausweisung der Umsatzsteuer gemäß "
+"§ 19 UStG."
+
+#: functions.php:407
+#, php-format
+msgid ""
+"Final Price excl. <a href=\"%s\" target=\"_blank\">Shipping</a>, exempt from "
+"VAT according to Art. 19 of the German VAT law (UStG)"
+msgstr ""
+"Endpreis zzgl. <a href=\"%s\" target=\"_blank\">Versandkosten</a>, keine "
+"Ausweisung der Umsatzsteuer gemäß § 19 UStG"
+
+#: functions.php:546
 msgid "Buy Tickets"
 msgstr "Tickets kaufen"
 
@@ -105,6 +131,14 @@ msgstr ""
 "Ich habe die <a href=\"%s\" target=\"_blank\">Allgemeinen "
 "Geschäftsbedingungen</a> und <a href=\"%s\" target=\"_blank\">"
 "Datenschutzerklärung</a> gelesen und bestätige diese hiermit."
+
+#: woocommerce/pdf/tlc-no-vat/credit-note.php:168
+msgid ""
+"The invoiced amount is exempt from value-added tax according to Art. 19 (1) "
+"of the German VAT law (UStG)."
+msgstr ""
+"Kein Umsatzsteuerausweis aufgrund Anwendung der Kleinunternehmerregelung "
+"gemäß § 19 UStG."
 
 #. Name of the theme
 msgid "Storefront Child Theme"

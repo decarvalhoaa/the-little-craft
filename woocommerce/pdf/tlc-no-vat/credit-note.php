@@ -161,7 +161,12 @@
 </table>
 
 <div id="customer_msg">
-	<?php if ( function_exists( 'pll_e' ) ) pll_e( 'The invoiced amount is exempt from value-added tax according to Art. 19 (1) of the German VAT law (UStG).' ); ?>
+	<?php
+	if ( function_exists( 'pll_e' ) )
+		pll_e( 'The invoiced amount is exempt from value-added tax according to Art. 19 (1) of the German VAT law (UStG).' );
+	else
+		_e( 'The invoiced amount is exempt from value-added tax according to Art. 19 (1) of the German VAT law (UStG).', 'thelittlecraft' );
+	?>
 </div><!-- customer-message -->
 
 <?php do_action( 'wpo_wcpdf_after_order_details', $wpo_wcpdf->export->template_type, $wpo_wcpdf->export->order ); ?>
