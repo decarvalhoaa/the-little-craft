@@ -1012,32 +1012,16 @@ article.event .entry-content:not(:empty) {
     border-color: #5f6062 !important;
 }
 
-/* Show add-to-cart and more-details buttons side by side and dont show price */
-	.sprh-hero p.add_to_cart_inline {
-		float: left;
-	}
-	
-	.sprh-hero p.add_to_cart_inline .amount {
-		display: none;
-	}
-	
-	/* Hide Product Hero More-Details button on product categories */
-	.sprh-hero p.more-details {
-		float: left;
-	} /* End: Show add-to-cart and more-details buttons side by side and dont show price */
+/* Style price font size to be larger and don't show more-details button */
+.sprh-hero p.add_to_cart_inline .amount {
+	font-size: 1.25em;
+	line-height: 1.618 !important;
+}
 
-/* Style price font size to be larger and don't show more-details button
-	.sprh-hero p.add_to_cart_inline .amount {
-		font-size: 1.25em;
-		line-height: 1.618 !important;
-		display: block;
-		margin-right: 1em;
-		margin-bottom: 1em;
-	}
-	
-	.sprh-hero p.more-details {
-		display: none !important;
-	} /* End: Style price font size to be larger and don't show more-details button  */
+/* Hide more-details button */
+.sprh-hero p.more-details {
+	display: none !important;
+}
 
 
 /* Hide Parallax & Product Hero for handheld devices with small screens */
