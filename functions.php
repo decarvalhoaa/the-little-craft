@@ -5,9 +5,7 @@
  */
 
 function sf_child_theme_enqueue_styles() {
-
     wp_enqueue_style( 'storefront-child-style', get_stylesheet_directory_uri() . '/style.css', array( 'storefront-style' ) );
-
 }
 add_action( 'wp_enqueue_scripts', 'sf_child_theme_enqueue_styles' );
 
@@ -43,16 +41,16 @@ add_action( 'wp_enqueue_scripts', 'tlc_load_javascript_files' );
 function tlc_frontend_scripts_include_lightbox() {
     // Test if WooCommerce is activated
     if ( did_action( 'woocommerce_loaded' ) ) {
-	global $woocommerce;
-
-	$suffix      = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	$lightbox_en = get_option( 'woocommerce_enable_lightbox' ) == 'yes' ? true : false;
-
-	if ( $lightbox_en ) {
-	    wp_enqueue_script( 'prettyPhoto', $woocommerce->plugin_url() . '/assets/js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js', array( 'jquery' ), $woocommerce->version, true );
-	    wp_enqueue_script( 'prettyPhoto-init', $woocommerce->plugin_url() . '/assets/js/prettyPhoto/jquery.prettyPhoto.init' . $suffix . '.js', array( 'jquery' ), $woocommerce->version, true );
-	    wp_enqueue_style( 'woocommerce_prettyPhoto_css', $woocommerce->plugin_url() . '/assets/css/prettyPhoto.css' );
-	}
+		global $woocommerce;
+	
+		$suffix      = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		$lightbox_en = get_option( 'woocommerce_enable_lightbox' ) == 'yes' ? true : false;
+	
+		if ( $lightbox_en ) {
+			wp_enqueue_script( 'prettyPhoto', $woocommerce->plugin_url() . '/assets/js/prettyPhoto/jquery.prettyPhoto' . $suffix . '.js', array( 'jquery' ), $woocommerce->version, true );
+			wp_enqueue_script( 'prettyPhoto-init', $woocommerce->plugin_url() . '/assets/js/prettyPhoto/jquery.prettyPhoto.init' . $suffix . '.js', array( 'jquery' ), $woocommerce->version, true );
+			wp_enqueue_style( 'woocommerce_prettyPhoto_css', $woocommerce->plugin_url() . '/assets/css/prettyPhoto.css' );
+		}
     }
 }
 add_action( 'wp_enqueue_scripts', 'tlc_frontend_scripts_include_lightbox' );
@@ -110,19 +108,19 @@ add_action( 'after_setup_theme', function () {
 function tlc_init_wc_session_cookie() {
     // Test if WooCommerce is activated
     if ( did_action( 'woocommerce_loaded' ) ) {
-	// List of page ids, titles or slugs that require WooCommerce session
-	// creation (array of comma separated strings)
-	$session_pages = array( 'my-account', 'mein-konto' );
-
-	// Check the current page against the session_pages list and instantiate the
-	// session if the page is in the list and the user is not already logged in.
-	// If the session already exists from having created a cart, WooCommerce will
-	// not destroy the active session
-	if ( is_page( $session_pages ) && ! is_user_logged_in() ) {
-	    global $woocommerce;
-
-	    $woocommerce->session->set_customer_session_cookie( true );
-	}
+		// List of page ids, titles or slugs that require WooCommerce session
+		// creation (array of comma separated strings)
+		$session_pages = array( 'my-account', 'mein-konto' );
+	
+		// Check the current page against the session_pages list and instantiate the
+		// session if the page is in the list and the user is not already logged in.
+		// If the session already exists from having created a cart, WooCommerce will
+		// not destroy the active session
+		if ( is_page( $session_pages ) && ! is_user_logged_in() ) {
+			global $woocommerce;
+	
+			$woocommerce->session->set_customer_session_cookie( true );
+		}
     }
 }
 add_action( 'wp', 'tlc_init_wc_session_cookie' );
@@ -148,16 +146,20 @@ function tlc_remove_woocommerce_reviews_tab( $tabs ) {
  *   page
  */
 // Add repeat email field and terms checkbox
-function tlc_woocommerce_register_form() {
+function tlc_woocommerce_register_form_email2() {
     ?>
     <p class="form-row form-row-wide">
-	    <label for="reg_password2"><?php _e( 'Confirm email address', 'thelittlecraft' ); ?> <span class="required">*</span></label>
+	    <label for="reg_email2"><?php _e( 'Confirm email address', 'thelittlecraft' ); ?> <span class="required">*</span></label>
 	    <input type="email" class="input-text" name="email2" id="reg_email2" value="<?php if ( ! empty( $_POST['email2'] ) ) echo esc_attr( $_POST['email2'] ); ?>" />
     </p>
     <?php
+}
+add_action( 'woocommerce_register_form', 'tlc_woocommerce_register_form_email2' );
+
+function tlc_register_form_terms() {
     wc_get_template( 'checkout/terms.php' );
 }
-add_action( 'woocommerce_register_form', 'tlc_woocommerce_register_form' );
+add_action( 'register_form', 'tlc_register_form_terms', 10 );
 
 function tlc_validation_registration( $error, $username, $password, $email ) {
     if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) && empty( $username ) ) {
@@ -207,21 +209,21 @@ function tlc_woocommerce_checkout_fields( $fields ) {
     $fields['billing']['billing_email']['clear'] = true;
 
     $billing_email2 = array(
-	'type'		=> 'email',
-	'label'		=> __( 'Confirm Email Address', 'thelittlecraft' ),
-	'placeholder'	=> _x( 'Retype Email Address', 'placeholder', 'thelittlecraft' ),
-	'class'		=> array('form-row-wide', 'validate-email' ),
-	'required'	=> true,
-	'clear'		=> true
+		'type'		=> 'email',
+		'label'		=> __( 'Confirm Email Address', 'thelittlecraft' ),
+		'placeholder'	=> _x( 'Retype Email Address', 'placeholder', 'thelittlecraft' ),
+		'class'		=> array('form-row-wide', 'validate-email' ),
+		'required'	=> true,
+		'clear'		=> true
     );
 
     $index = 1;
     foreach( $fields['billing'] as $key => $field ) {
-	if ( strcmp( $key, 'billing_email' ) == 0 ) {
-	    break;
-	} else {
-	    $index++;
-	}
+		if ( strcmp( $key, 'billing_email' ) == 0 ) {
+			break;
+		} else {
+			$index++;
+		}
     }
 
     $fields['billing'] = array_slice( $fields['billing'], 0, $index, true ) + array( 'billing_email-2' => $billing_email2 ) + array_slice( $fields['billing'], $index, count( $fields['billing'] ) - 1, true );
@@ -239,7 +241,7 @@ add_filter( 'woocommerce_billing_fields' , 'tlc_woocommerce_billing_fields', 10 
 
 function tlc_custom_checkout_field_process() {
     if ( isset( $_POST['billing_email'] ) && ! empty( $_POST['billing_email'] ) && isset( $_POST['billing_email-2'] ) && ! empty( $_POST['billing_email-2'] ) && strcmp( $_POST['billing_email'], $_POST['billing_email-2'] ) !== 0 ) {
-	wc_add_notice( __( 'The <strong>Email Address</strong> and <strong>Confirm Email Address</strong> do not match.', 'thelittlecraft' ), 'error' );
+		wc_add_notice( __( 'The <strong>Email Address</strong> and <strong>Confirm Email Address</strong> do not match.', 'thelittlecraft' ), 'error' );
     }
 }
 add_action('woocommerce_checkout_process', 'tlc_custom_checkout_field_process', 10 );
@@ -250,10 +252,7 @@ add_action('woocommerce_checkout_process', 'tlc_custom_checkout_field_process', 
  * ToDo: if page id doesn't exist what is the return value of pll_get_post()?
  */
 function tlc_pll_get_permalink( $page_id ) {
-    if ( function_exists( 'pll_get_post' ) )
-        return get_permalink( pll_get_post( $page_id ) );
-    else
-	return false;
+	return function_exists( 'pll_get_post' ) ? get_permalink( pll_get_post( $page_id ) ) : get_permalink( $page_id );
 }
 
 
@@ -267,28 +266,25 @@ function tlc_footer_credit() {
 }
 
 function tlc_storefront_footer() {
-    if ( function_exists( 'pll_get_post' ) ) {
-
 	/* footer pages */
-	$privacy_en_page_id = 79;
-	$imprint_en_page_id = 80;
-	$terms_en_page_id = 81;
+	$privacy_page_id = 210;
+	$imprint_page_id = 179;
+	$terms_page_id = 166;
 
-	$privacy_tr_id = pll_get_post( $privacy_en_page_id );
-	$imprint_tr_id = pll_get_post( $imprint_en_page_id );
-	$terms_tr_id = pll_get_post( $terms_en_page_id );
+	$privacy_tr_id = function_exists( 'pll_get_post' ) ? pll_get_post( $privacy_page_id ) : $privacy_page_id;
+	$imprint_tr_id = function_exists( 'pll_get_post' ) ? pll_get_post( $imprint_page_id ) : $imprint_page_id;
+	$terms_tr_id = function_exists( 'pll_get_post' ) ? pll_get_post( $terms_page_id ) : $terms_page_id;
 
 	?>
 	<div class="site-info">
-	    <div class="copyright">Copyright &copy; <?php echo ' '.get_the_date('Y').' '.get_bloginfo('name'); ?></div>
-	    <div class="terms">
-		<span><a href="<?php echo get_page_link( $terms_tr_id ); ?>"><?php echo get_the_title( $terms_tr_id ); ?></a></span>
-		<span><a href="<?php echo get_page_link( $privacy_tr_id ); ?>"><?php echo get_the_title( $privacy_tr_id ); ?></a></span>
-		<span><a href="<?php echo get_page_link( $imprint_tr_id ); ?>"><?php echo get_the_title( $imprint_tr_id ); ?></a></span>
-	    </div>
+		<div class="copyright">Copyright &copy; <?php echo ' '.get_the_date('Y').' '.get_bloginfo('name'); ?></div>
+		<div class="terms">
+			<span><a href="<?php echo get_page_link( $terms_tr_id ); ?>"><?php echo get_the_title( $terms_tr_id ); ?></a></span>
+			<span><a href="<?php echo get_page_link( $privacy_tr_id ); ?>"><?php echo get_the_title( $privacy_tr_id ); ?></a></span>
+			<span><a href="<?php echo get_page_link( $imprint_tr_id ); ?>"><?php echo get_the_title( $imprint_tr_id ); ?></a></span>
+		</div>
 	</div><!-- .site-info -->
 	<?php
-    }
 }
 add_action( 'init', 'tlc_footer_credit', 10 );
 
@@ -304,7 +300,7 @@ add_action( 'init', 'tlc_footer_credit', 10 );
  */
 function tlc_add_required_field_note() {
     ?>
-    <p><span class="required">*</span><em><?php _e( '&nbsp;Required field', 'thelittlecraft' ); ?></em></p>
+		<p><span class="required">*</span><em><?php _e( '&nbsp;Required field', 'thelittlecraft' ); ?></em></p>
     <?php
 }
 add_action( 'woocommerce_after_customer_login_form', 'tlc_add_required_field_note' );
@@ -321,23 +317,23 @@ add_action( 'comment_form_after', 'tlc_add_required_field_note' );
 function tlc_storefront_add_topbar() {
     ?>
     <div id="tlc-top-bar" class="tlc-top-bar-wrap show-on-mobile">
-	<div class="col-full">
-	    <section class="tlc-top-bar fix">
-		<section class="tlc-top-bar col-1 block">
-		    <!-- content goes here -->
-		    <?php
-		    if ( function_exists( 'pll_the_languages' ) ) {
-			?>
-			<aside class="tlc_polylang_language_switcher">
-			    <ul><?php pll_the_languages( array( 'show_flags' => 1, 'hide_current' => 1 ) ); ?></ul>
-			</aside>
-			<?php
-		    }
-		    ?>
-		</section>
-		<div class="clear"></div>
-	    </section>
-	</div>
+		<div class="col-full">
+			<section class="tlc-top-bar fix">
+				<section class="tlc-top-bar col-1 block">
+					<!-- content goes here -->
+					<?php
+					if ( function_exists( 'pll_the_languages' ) ) {
+						?>
+						<aside class="tlc_polylang_language_switcher">
+							<ul><?php pll_the_languages( array( 'show_flags' => 1, 'hide_current' => 1 ) ); ?></ul>
+						</aside>
+						<?php
+					}
+					?>
+				</section>
+				<div class="clear"></div>
+			</section>
+		</div>
     </div>
     <?php
 }
@@ -351,13 +347,11 @@ if ( function_exists( 'pll_register_string' ) ) {
     pll_register_string( 'announcement', 'SPECIAL OFFER: Free shipping for Germany for orders above 29 €!', 'thelittlecraft' );
 }
 function tlc_storefront_add_shop_notice() {
-    if ( function_exists( 'pll__' ) ) {
 	?>
 	<div id="tlc-announcement" class="tlc-announcement green show-on-mobile">
-	    <span><?php pll_e( 'SPECIAL OFFER: Free shipping for Germany for orders above 29 €!' ); ?></span>
+	    <span><?php function_exists( 'pll_e' ) ? pll_e( 'SPECIAL OFFER: Free shipping for Germany for orders above 29 €!' ) : _e( 'SPECIAL OFFER: Free shipping for Germany for orders above 29 €!', 'thelittlecraft'); ?></span>
 	</div>
 	<?php
-    }
 }
 add_action( 'storefront_before_header', 'tlc_storefront_add_shop_notice', 1 );
 
@@ -366,7 +360,7 @@ add_action( 'storefront_before_header', 'tlc_storefront_add_shop_notice', 1 );
  * Replace WooCommerce default PayPal icon
  */
 function tlc_paypal_checkout_icon() {
- return get_stylesheet_directory_uri() . '/images/paypal_credit_cards.png'; // write your own image URL here
+	return get_stylesheet_directory_uri() . '/images/paypal_credit_cards.png'; // write your own image URL here
 }
 add_filter( 'woocommerce_paypal_icon', 'tlc_paypal_checkout_icon' );
 
@@ -386,28 +380,35 @@ if ( function_exists( 'pll_register_string' ) ) {
 
 // Add vat notice before footer in all pages
 function tlc_small_business_vat_notice_footer() {
-    if ( function_exists( 'pll__' ) ) {
 	?>
 	<div id="small_business_vat_notice_footer">
 	    <div class="col-full">
-		<em><?php printf( pll__( '* All stated prices are final prices excl. <a href="%s" target="_blank">Shipping</a>, exempt from VAT according to Art. 19 of the German VAT law (UStG).' ), esc_url( tlc_pll_get_permalink( 83 ) ) ); ?></em>
+			<em>
+				<?php
+				if ( function_exists( 'pll__' ) )
+					printf( pll__( '* All stated prices are final prices excl. <a href="%s" target="_blank">Shipping</a>, exempt from VAT according to Art. 19 of the German VAT law (UStG).' ), esc_url( tlc_pll_get_permalink( 670 ) ) );
+				else
+					printf( __( '* All stated prices are final prices excl. <a href="%s" target="_blank">Shipping</a>, exempt from VAT according to Art. 19 of the German VAT law (UStG).', 'thelittlecraft' ), esc_url( tlc_pll_get_permalink( 670 ) ) );
+				?>
+			</em>
 	    </div>
 	</div>
 	<!-- #small_business_vat_notice_footer -->
 	<?php
-    }
 }
 add_action( 'storefront_before_footer', 'tlc_small_business_vat_notice_footer', 50 );
 
 // Add vat notice to single product overview page and product listings
 function overwrite_woocommerce_price_format( $price, $instance ) {
-    if ( function_exists( 'pll__' ) ) {
 	$content = '<small class="small_business_vat_notice">';
-	$content .= sprintf( pll__( 'Final Price excl. <a href="%s" target="_blank">Shipping</a>, exempt from VAT according to Art. 19 of the German VAT law (UStG)'), esc_url( tlc_pll_get_permalink( 83 ) ) );
+	if ( function_exists( 'pll__' ) )
+		$content .= sprintf( pll__( 'Final Price excl. <a href="%s" target="_blank">Shipping</a>, exempt from VAT according to Art. 19 of the German VAT law (UStG)' ), esc_url( tlc_pll_get_permalink( 670 ) ) );
+	else
+		$content .= sprintf( __( 'Final Price excl. <a href="%s" target="_blank">Shipping</a>, exempt from VAT according to Art. 19 of the German VAT law (UStG)', 'thelittlecraft' ), esc_url( tlc_pll_get_permalink( 670 ) ) );
 	$content .= '</small>';
 
 	$price = $price . $content;
-    }
+    
     return $price;
 }
 add_filter( 'woocommerce_price_html', 'overwrite_woocommerce_price_format', 10, 2 );
@@ -432,17 +433,17 @@ function tlc_hide_shipping_when_free_is_available( $rates, $package ) {
     $free_shipping = array();
 
     foreach( $rates as $rate ) {
-	// Only modify rates if free_shipping is present
-	if ( 'free_shipping' === $rate->method_id ) {
-	    $free_shipping = $rate;
-	    break;
-	}
+		// Only modify rates if free_shipping is present
+		if ( 'free_shipping' === $rate->method_id ) {
+			$free_shipping = $rate;
+			break;
+		}
     }
 
     if ( ! empty( $free_shipping ) ) {
-	// Unset all methods except for free_shipping, do the following
-	$rates                  = array();
-	$rates[$free_shipping->id] = $free_shipping;
+		// Unset all methods except for free_shipping, do the following
+		$rates                  = array();
+		$rates[$free_shipping->id] = $free_shipping;
     }
 
     return $rates;
@@ -459,10 +460,12 @@ if ( function_exists( 'pll_the_languages' ) ) {
 }
 
 function tlc_translate_price_display_suffix( $string, $instance ) {
-    if ( function_exists( 'pll__' ) ) {
-	$price_display_suffix = get_option( 'woocommerce_price_display_suffix' );
-	return str_replace( $price_display_suffix, pll__( $price_display_suffix ), $string );
-    }
+	if ( function_exists( 'pll__' ) ) {
+		$price_display_suffix = get_option( 'woocommerce_price_display_suffix' );
+		return str_replace( $price_display_suffix, pll__( $price_display_suffix ), $string );
+    } else {
+		return $string;
+	}
 }
 add_filter( 'woocommerce_get_price_suffix', 'tlc_translate_price_display_suffix', 10, 2 );
 
@@ -659,7 +662,7 @@ add_filter( 'get_terms', 'tlc_custom_get_terms', 10, 3 );
  * Alo EasyMail Newsletter plugin customisations
  */
 function tlc_easymail_auto_add_subscriber_to_list( $subscriber, $user_id = false ) {
-        global $post;
+       global $post;
 
 	//error_log(print_r($post, true));
 	//is_singular() ? error_log(print_r('is singular', true)) : error_log(print_r(is_singular(), true));

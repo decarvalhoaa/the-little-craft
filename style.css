@@ -489,10 +489,6 @@ button.menu-toggle, button.menu-toggle:hover {
 	margin-left: .618em;
 }
 
-#payment .terms label {
-	margin-left: 0 !important;
-}
-
 /* Correct position of the Remember me checkbox in the login form */
 .form-row label.inline {
 	display: inline;
@@ -1029,4 +1025,16 @@ article.event .entry-content:not(:empty) {
 	.sph-hero, .sprh-hero {
 		display: none;
 	}
+}
+
+
+/*******************************************************************************
+ *
+ * WP-SpamShield
+ *
+ ********************/
+
+/* Hide First Name and Last Name fields in WC Registration form */
+p.form-row label[for="first_name"], p.form-row label[for="last_name"], p.form-row input[name="first_name"], p.form-row input[name="last_name"]  {
+	display: none;
 }
