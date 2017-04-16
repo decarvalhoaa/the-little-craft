@@ -745,11 +745,18 @@ button.menu-toggle, button.menu-toggle:hover {
 	opacity: .8 !important;
 }
 
-#cookie-notice .button:hover {
-	background-color: #fde7dd;
-	border-color: #fde7dd;
-	color: #ee626a;
+/* Storefront Parallax Hero button */
+#cookie-notice .button {
+	background-color: #d54947 !important;
+	border-color: #d54947 !important;
+	color: #ffffff !important;
 }
+
+#cookie-notice .button:hover {
+	background-color: #ee6260 !important;
+	border-color: #ee6260 !important;
+}
+
 
 
 /*******************************************************************************
@@ -989,25 +996,53 @@ article.event .entry-content:not(:empty) {
  ********************/
 
 /* Storefront Parallax Hero button */
-.sph-hero-content a.button, #cookie-notice .button {
+.sph-hero-content a.button, .sprh-hero-content a.button, .sph-hero-content a.button.alt:hover, .sprh-hero-content a.button.alt:hover {
 	background-color: #d54947 !important;
 	border-color: #d54947 !important;
 	color: #ffffff;
 }
 
-.sph-hero-content a.button:hover, #cookie-notice .button:hover {
+.sph-hero-content a.button:hover, .sprh-hero-content a.button:hover {
 	background-color: #ee6260 !important;
 	border-color: #ee6260 !important;
 }
+
+.sph-hero-content a.button.alt, .sprh-hero-content a.button.alt {
+    background-color: #5f6062 !important;
+    border-color: #5f6062 !important;
+}
+
+/* Show add-to-cart and more-details buttons side by side and dont show price */
+	.sprh-hero p.add_to_cart_inline {
+		float: left;
+	}
+	
+	.sprh-hero p.add_to_cart_inline .amount {
+		display: none;
+	}
+	
+	/* Hide Product Hero More-Details button on product categories */
+	.sprh-hero p.more-details {
+		float: left;
+	} /* End: Show add-to-cart and more-details buttons side by side and dont show price */
+
+/* Style price font size to be larger and don't show more-details button
+	.sprh-hero p.add_to_cart_inline .amount {
+		font-size: 1.25em;
+		line-height: 1.618 !important;
+		display: block;
+		margin-right: 1em;
+		margin-bottom: 1em;
+	}
+	
+	.sprh-hero p.more-details {
+		display: none !important;
+	} /* End: Style price font size to be larger and don't show more-details button  */
+
 
 /* Hide Parallax & Product Hero for handheld devices with small screens */
 @media (max-width:768px) {
 	.sph-hero, .sprh-hero {
 		display: none;
 	}
-}
-
-/* Hide Product Hero More-Details button on product categories */
-.tax-product_cat .sprh-hero .more-details {
-	display: none;
 }
