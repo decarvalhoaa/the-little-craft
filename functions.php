@@ -159,6 +159,7 @@ add_action( 'woocommerce_register_form', 'tlc_woocommerce_register_form_email2' 
 function tlc_register_form_terms() {
     wc_get_template( 'checkout/terms.php' );
 }
+remove_action( 'register_form', 'alo_em_show_registration_optin' ); // remove duplicated optin/opout newsletter checkbox added already in terms template 
 add_action( 'register_form', 'tlc_register_form_terms', 10 );
 
 function tlc_validation_registration( $error, $username, $password, $email ) {
@@ -689,6 +690,9 @@ function tlc_easymail_auto_add_subscriber_to_list( $subscriber, $user_id = false
 	alo_em_add_subscriber_to_list ( $subscriber->ID, 1 );
 }
 add_action( "alo_easymail_new_subscriber_added",  "tlc_easymail_auto_add_subscriber_to_list", 10, 2 );
+
+/* Show the optin/optout on Checkout */
+add_action( 'woocommerce_checkout_before_terms_and_conditions', 'alo_em_show_registration_optin' );
 
 
 /**

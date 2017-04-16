@@ -489,10 +489,6 @@ button.menu-toggle, button.menu-toggle:hover {
 	margin-left: .618em;
 }
 
-#payment .terms label {
-	margin-left: 0 !important;
-}
-
 /* Correct position of the Remember me checkbox in the login form */
 .form-row label.inline {
 	display: inline;
@@ -745,11 +741,18 @@ button.menu-toggle, button.menu-toggle:hover {
 	opacity: .8 !important;
 }
 
-#cookie-notice .button:hover {
-	background-color: #fde7dd;
-	border-color: #fde7dd;
-	color: #ee626a;
+/* Storefront Parallax Hero button */
+#cookie-notice .button {
+	background-color: #d54947 !important;
+	border-color: #d54947 !important;
+	color: #ffffff !important;
 }
+
+#cookie-notice .button:hover {
+	background-color: #ee6260 !important;
+	border-color: #ee6260 !important;
+}
+
 
 
 /*******************************************************************************
@@ -830,6 +833,11 @@ button.menu-toggle, button.menu-toggle:hover {
 
 .alo_easymail_reg_optin label {
 	margin-left: .618em;
+	display: inline !important;
+}
+
+.place-order .alo_easymail_reg_optin label {
+	/*margin-left: 1.618em;*/
 }
 
 .alo_easymail_widget_form input[type=radio], .alo_easymail_widget_form_registered input[type=radio] {
@@ -990,16 +998,37 @@ article.event .entry-content:not(:empty) {
  ********************/
 
 /* Storefront Parallax Hero button */
-.sph-hero-content a.button, #cookie-notice .button {
+.sph-hero-content a.button, .sprh-hero-content a.button, .sph-hero-content a.button.alt:hover, .sprh-hero-content a.button.alt:hover {
 	background-color: #d54947 !important;
 	border-color: #d54947 !important;
 	color: #ffffff;
 }
 
-.sph-hero-content a.button:hover, #cookie-notice .button:hover {
+.sph-hero-content a.button:hover, .sprh-hero-content a.button:hover {
 	background-color: #ee6260 !important;
 	border-color: #ee6260 !important;
 }
+
+.sph-hero-content a.button.alt, .sprh-hero-content a.button.alt {
+    background-color: #5f6062 !important;
+    border-color: #5f6062 !important;
+}
+
+/* Style price font size to be larger and don't show more-details button */
+.sprh-hero p.add_to_cart_inline .amount {
+	font-size: 1.618em;
+}
+
+.sprh-hero p.add_to_cart_inline .small_business_vat_notice {
+	margin-bottom: 1em;
+	line-height: 1.618em;
+}
+
+/* Hide more-details button */
+.sprh-hero p.more-details {
+	display: none !important;
+}
+
 
 /* Hide Parallax & Product Hero for handheld devices with small screens */
 @media (max-width:768px) {
@@ -1008,8 +1037,15 @@ article.event .entry-content:not(:empty) {
 	}
 }
 
-/* Hide Product Hero More-Details button on product categories */
-.tax-product_cat .sprh-hero .more-details {
+
+/*******************************************************************************
+ *
+ * WP-SpamShield
+ *
+ ********************/
+
+/* Hide First Name and Last Name fields in WC Registration form */
+p.form-row label[for="first_name"], p.form-row label[for="last_name"], p.form-row input[name="first_name"], p.form-row input[name="last_name"]  {
 	display: none;
 }
 
