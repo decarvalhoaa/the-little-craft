@@ -1010,8 +1010,12 @@ article.event .entry-content:not(:empty) {
 
 /* Style price font size to be larger and don't show more-details button */
 .sprh-hero p.add_to_cart_inline .amount {
-	font-size: 1.25em;
-	line-height: 1.618 !important;
+	font-size: 1.618em;
+}
+
+.sprh-hero p.add_to_cart_inline .small_business_vat_notice {
+	margin-bottom: 1em;
+	line-height: 1.618em;
 }
 
 /* Hide more-details button */
