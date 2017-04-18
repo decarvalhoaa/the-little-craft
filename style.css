@@ -836,8 +836,9 @@ button.menu-toggle, button.menu-toggle:hover {
 	display: inline !important;
 }
 
-.place-order .alo_easymail_reg_optin label {
-	/*margin-left: 1.618em;*/
+/* Hidde newsletter option/optout on pay for order page */
+.woocommerce-order-pay #order_review #payment .alo_easymail_reg_optin {
+	display: none;
 }
 
 .alo_easymail_widget_form input[type=radio], .alo_easymail_widget_form_registered input[type=radio] {
@@ -992,7 +993,6 @@ article.event .entry-content:not(:empty) {
 
 /*******************************************************************************
  *
- * Storefront Parallax Hero
  * Storefront Parallax & Product Hero
  *
  ********************/
@@ -1035,18 +1035,6 @@ article.event .entry-content:not(:empty) {
 	.sph-hero, .sprh-hero {
 		display: none;
 	}
-}
-
-
-/*******************************************************************************
- *
- * WP-SpamShield
- *
- ********************/
-
-/* Hide First Name and Last Name fields in WC Registration form */
-p.form-row label[for="first_name"], p.form-row label[for="last_name"], p.form-row input[name="first_name"], p.form-row input[name="last_name"]  {
-	display: none;
 }
 
 
