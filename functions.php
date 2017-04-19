@@ -160,7 +160,7 @@ function tlc_register_form_terms() {
     wc_get_template( 'checkout/terms.php' );
 }
 remove_action( 'register_form', 'alo_em_show_registration_optin' ); // remove duplicated optin/opout newsletter checkbox added already in terms template 
-add_action( 'register_form', 'tlc_register_form_terms', 10 );
+add_action( 'woocommerce_register_form', 'tlc_register_form_terms', 10 ); // WC3.x change action name from register_form to woocommerce_register_form
 
 function tlc_validation_registration( $error, $username, $password, $email ) {
     if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) && empty( $username ) ) {
@@ -203,21 +203,55 @@ add_filter( 'woocommerce_registration_redirect', 'tlc_woocommerce_registration_r
 
 // Add repeat email field to billing form in checkout page
 function tlc_woocommerce_checkout_fields( $fields ) {
-    // Remove Phone field
+	$order_billing = array(
+		'billing_first_name',
+		'billing_last_name',
+		'billing_company',
+		'billing_email',
+		'billing_email-2', // new repeat email field
+		'billing_country',
+		'billing_address_1',
+		'billing_address_2',
+		'billing_postcode',
+		'billing_city',
+		'billing_state'
+	);
+	
+	$order_shipping = array(
+		'shipping_first_name',
+		'shipping_last_name',
+		'shipping_company',
+		'shipping_country',
+		'shipping_address_1',
+		'shipping_address_2',
+		'shipping_postcode',
+		'shipping_city',
+		'shipping_state'
+	);
+	
+	$fields_ordered = array();
+    
+	// Remove Phone field
     unset( $fields['billing']['billing_phone'] );
-    // Make Email field wide
+	
+	// Make City and Postcode fields side by side
+	$fields['billing']['billing_postcode']['class'] = array('form-row-first');
+	$fields['billing']['billing_city']['class'] = array('form-row-last');
+	$fields['shipping']['shipping_postcode']['class'] = array('form-row-first');
+	$fields['shipping']['shipping_city']['class'] = array('form-row-last');
+	
+	// Make Email field wide
     $fields['billing']['billing_email']['class'] = array('form-row-wide');
-    $fields['billing']['billing_email']['clear'] = true;
 
     $billing_email2 = array(
 		'type'		=> 'email',
 		'label'		=> __( 'Confirm Email Address', 'thelittlecraft' ),
 		'placeholder'	=> _x( 'Retype Email Address', 'placeholder', 'thelittlecraft' ),
 		'class'		=> array('form-row-wide', 'validate-email' ),
-		'required'	=> true,
-		'clear'		=> true
+		'required'	=> true
     );
 
+	/*
     $index = 1;
     foreach( $fields['billing'] as $key => $field ) {
 		if ( strcmp( $key, 'billing_email' ) == 0 ) {
@@ -228,8 +262,23 @@ function tlc_woocommerce_checkout_fields( $fields ) {
     }
 
     $fields['billing'] = array_slice( $fields['billing'], 0, $index, true ) + array( 'billing_email-2' => $billing_email2 ) + array_slice( $fields['billing'], $index, count( $fields['billing'] ) - 1, true );
+    */
+	$fields['billing']['billing_email-2'] = $billing_email2;
+	error_log(print_r($fields['billing'], true));
 
-    return $fields;
+	// Reorder fields
+	foreach($order_billing as $index) {
+		if ( isset( $fields['billing'][$index] ) )
+			$fields_ordered['billing'][$index] = $fields['billing'][$index];
+	}
+	$fields['billing'] = $fields_ordered['billing'];
+	foreach($order_shipping as $index) {
+		if ( isset( $fields['shipping'][$index] ) )
+			$fields_ordered['shipping'][$index] = $fields['shipping'][$index];
+	}
+	$fields['shipping'] = $fields_ordered['shipping'];
+	
+	return $fields;
 };
 add_filter( 'woocommerce_checkout_fields', 'tlc_woocommerce_checkout_fields', 10, 1 );
 
@@ -412,13 +461,8 @@ function overwrite_woocommerce_price_format( $price, $instance ) {
     
     return $price;
 }
-add_filter( 'woocommerce_price_html', 'overwrite_woocommerce_price_format', 10, 2 );
-add_filter( 'woocommerce_sale_price_html', 'overwrite_woocommerce_price_format', 10, 2 );
-add_filter( 'woocommerce_grouped_price_html', 'overwrite_woocommerce_price_format', 10, 2 );
-add_filter( 'woocommerce_variable_price_html', 'overwrite_woocommerce_price_format', 10, 2 );
-add_filter( 'woocommerce_variable_sale_price_html', 'overwrite_woocommerce_price_format', 10, 2 );
-add_filter( 'woocommerce_variation_price_html', 'overwrite_woocommerce_price_format', 10, 2 );
-add_filter( 'woocommerce_variation_sale_price_html', 'overwrite_woocommerce_price_format', 10, 2 );
+add_filter( 'woocommerce_get_price_html', 'overwrite_woocommerce_price_format', 10, 2 );
+
 
 // Remove product price, in the shop loop, from linking to the product overview page.
 // The VAT Notice contain a link and HTML doesn't allow a link inside a link.

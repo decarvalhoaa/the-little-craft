@@ -476,19 +476,6 @@ button.menu-toggle, button.menu-toggle:hover {
     clear: both !important;
 }
 
-/* Correct position of terms checkbox and label */
-.terms input {
-	display: inline-block;
-	width: auto;
-	float: left;
-	margin: .327em 0 0;
-}
-
-.terms label {
-	display: inline !important;
-	margin-left: .618em;
-}
-
 /* Correct position of the Remember me checkbox in the login form */
 .form-row label.inline {
 	display: inline;
@@ -842,7 +829,7 @@ button.menu-toggle, button.menu-toggle:hover {
 }
 
 .alo_easymail_widget_form input[type=radio], .alo_easymail_widget_form_registered input[type=radio] {
-	margin: 3px 10px 0 0 !important;
+	margin: 0;
 }
 
 .alo_easymail_widget_form input[type=text] {
