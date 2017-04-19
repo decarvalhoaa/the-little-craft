@@ -1017,6 +1017,7 @@ article.event .entry-content:not(:empty) {
 /* Style price font size to be larger and don't show more-details button */
 .sprh-hero p.add_to_cart_inline .amount {
 	font-size: 1.618em;
+	line-height: 1.618;
 }
 
 .sprh-hero p.add_to_cart_inline .small_business_vat_notice {
