@@ -17,7 +17,8 @@ jQuery( document ).ready( function( $ ) {
 	 * ALO EasyMail Newsletter
 	 */
 	// Add placeholder text to Alo EasyEmail Newsletter form
-	var pll_lang = $.cookie( 'pll_language' );
+	//var pll_lang = $.cookie( 'pll_language' ); // WC3.x change from jQuery Cookie to Vanilla JS cookie https://github.com/js-cookie/js-cookie
+	var pll_lang = Cookies.get( 'pll_language' );
 	if ( pll_lang === null || pll_lang === undefined || pll_lang === '' || pll_lang == 'en' ) {
 		$( '#opt_email' ).attr( "placeholder", "Your Email address" );
 	} else {
