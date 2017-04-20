@@ -582,7 +582,6 @@ function tlc_em_add_and_remove_actions() {
     remove_action( 'em_before_main_content', 'em_breadcrumb', 20 );
     add_action( 'em_after_single_event_title', 'tlc_em_add_buy_tickets_button', 50 );
 }
-
 // Add Buy Tickets button
 function tlc_em_add_buy_tickets_button() {
     $post = get_post();
@@ -606,9 +605,9 @@ function tlc_em_replace_lightbox_with_prettyphoto( $hmtl, $post_id ) {
     $event_gallery = get_post_meta( $post_id, '_event_gallery', true );
 
     if ( !empty( $event_gallery ) )
-	return str_replace( 'rel="lightbox"', 'data-rel="prettyPhoto[' . $post_id . ']"', $hmtl );
+		return str_replace( 'rel="lightbox"', 'data-rel="prettyPhoto[' . $post_id . ']"', $hmtl );
     else
-	return str_replace( 'rel="lightbox"', 'data-rel="prettyPhoto"', $hmtl );
+		return str_replace( 'rel="lightbox"', 'data-rel="prettyPhoto"', $hmtl );
 }
 add_filter( 'em_single_event_thumbnail_html', 'tlc_em_replace_lightbox_with_prettyphoto', 10, 2 );
 add_filter( 'em_event_gallery_thumbnail_html', 'tlc_em_replace_lightbox_with_prettyphoto', 10, 2 );
@@ -620,25 +619,27 @@ function tlc_exclude_event_products_from_shop( $query ) {
 
     if ( ! is_admin() && is_shop() ) {
 		$event_cat = isset( $GLOBALS['thelittlecraft']['event-cat'] ) ? $GLOBALS['thelittlecraft']['event-cat'] : array();
-		$query->set( 'tax_query', array( array(
+		$tax_query = $query->get( 'tax_query' );
+		$tax_query[] = array(
 			'taxonomy' => 'product_cat',
 			'field' => 'slug',
 			'terms' => $event_cat, // Don't display products in the events (slug) categories on the shop page
 			'operator' => 'NOT IN'
-		) ) );
+		);
+		$query->set( 'tax_query', $tax_query );
     }
 }
 add_action( 'pre_get_posts', 'tlc_exclude_event_products_from_shop' );
 
 // Exclude Event Products from WooCommerce shortcodes and widgets
-function tlc_exclude_event_products_from_wc_shortcodes_and_widgets( $args ) {	
+function tlc_exclude_event_products_from_wc_shortcodes_and_widgets( $args ) {
 	$event_cat = isset( $GLOBALS['thelittlecraft']['event-cat'] ) ? $GLOBALS['thelittlecraft']['event-cat'] : array();
-	$args['tax_query'] = array( array(
+	$args['tax_query'][] = array(
 		'taxonomy' => 'product_cat',
 		'field' => 'slug',
 		'terms' => $event_cat, // Don't display products in the events (slug) categories on the shop page
 		'operator' => 'NOT IN'
-	) );
+	);
 	return $args;
 }
 add_filter( 'woocommerce_shortcode_products_query', 'tlc_exclude_event_products_from_wc_shortcodes_and_widgets' ); // Used for products shortcode
