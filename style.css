@@ -985,13 +985,13 @@ article.event .entry-content:not(:empty) {
  ********************/
 
 /* Storefront Parallax Hero button */
-.sph-hero-content a.button, .sprh-hero-content a.button, .sph-hero-content a.button.alt:hover, .sprh-hero-content a.button.alt:hover {
+.sph-hero-content a.button, .sprh-hero-content a.button {
 	background-color: #d54947 !important;
 	border-color: #d54947 !important;
 	color: #ffffff;
 }
 
-.sph-hero-content a.button:hover, .sprh-hero-content a.button:hover {
+.sph-hero-content a.button:hover, .sprh-hero-content a.button:hover, .sph-hero-content a.button.alt:hover, .sprh-hero-content a.button.alt:hover {
 	background-color: #ee6260 !important;
 	border-color: #ee6260 !important;
 }
@@ -1014,7 +1014,7 @@ article.event .entry-content:not(:empty) {
 
 /* Hide more-details button */
 .sprh-hero p.more-details {
-	display: none !important;
+	/*display: none !important;*/
 }
 
 
