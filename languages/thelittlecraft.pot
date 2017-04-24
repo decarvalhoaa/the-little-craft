@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TheLittleCraft 1.0\n"
 "Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
-"POT-Creation-Date: 2017-04-04 20:52+0000\n"
+"POT-Creation-Date: 2017-04-24 12:28+0000\n"
 "POT-Revision-Date: Mon May 30 2016 20:57:02 GMT+0200 (CEST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -27,67 +27,67 @@ msgstr ""
 msgid "Confirm email address"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:167
 msgid "Please enter a valid account username."
 msgstr ""
 
-#: functions.php:169
+#: functions.php:170
 msgid "Please provide a valid email address."
 msgstr ""
 
-#: functions.php:172
+#: functions.php:173
 msgid "Please confirm your email address by re-typing your email address."
 msgstr ""
 
-#: functions.php:175
+#: functions.php:176
 msgid "The email addresses do not match."
 msgstr ""
 
-#: functions.php:178
+#: functions.php:179
 msgid "Please enter an account password."
 msgstr ""
 
-#: functions.php:181
+#: functions.php:182
 msgid "You must accept our Terms &amp; Conditions."
 msgstr ""
 
-#: functions.php:196
+#: functions.php:197
 msgid ""
 "Thanks for registering with us. Your <strong>password</strong> was emailed "
 "to you.<br>Check your email inbox and return to this page to login with your "
 "username and password."
 msgstr ""
 
-#: functions.php:197
+#: functions.php:198
 msgid ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
 msgstr ""
 
-#: functions.php:213
+#: functions.php:248
 msgid "Confirm Email Address"
 msgstr ""
 
-#: functions.php:214
+#: functions.php:249
 msgctxt "placeholder"
 msgid "Retype Email Address"
 msgstr ""
 
-#: functions.php:244
+#: functions.php:294
 msgid ""
 "The <strong>Email Address</strong> and <strong>Confirm Email Address</strong>"
 " do not match."
 msgstr ""
 
-#: functions.php:303
+#: functions.php:353
 msgid "&nbsp;Required field"
 msgstr ""
 
-#: functions.php:352
-msgid "SPECIAL OFFER: Free shipping for Germany for orders above 29 €!"
+#: functions.php:402
+msgid "SPECIAL OFFER: Free shipping for Germany for orders above 39 €!"
 msgstr ""
 
-#: functions.php:391
+#: functions.php:441
 #, php-format
 msgid ""
 "* All stated prices are final prices excl. <a href=\"%s\" target=\"_blank\">"
@@ -95,18 +95,18 @@ msgid ""
 "(UStG)."
 msgstr ""
 
-#: functions.php:407
+#: functions.php:457
 #, php-format
 msgid ""
 "Final Price excl. <a href=\"%s\" target=\"_blank\">Shipping</a>, exempt from "
 "VAT according to Art. 19 of the German VAT law (UStG)"
 msgstr ""
 
-#: functions.php:546
+#: functions.php:590
 msgid "Buy Tickets"
 msgstr ""
 
-#: woocommerce/checkout/terms.php:16
+#: woocommerce/checkout/terms.php:17
 #, php-format
 msgid ""
 "I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">Terms &amp; "

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TheLittleCraft 1.0\n"
 "Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
-"POT-Creation-Date: 2017-04-04 20:53+0000\n"
-"PO-Revision-Date: 2017-04-04 20:53+0000\n"
+"POT-Creation-Date: 2017-04-24 12:28+0000\n"
+"PO-Revision-Date: 2017-04-24 12:28+0000\n"
 "Last-Translator: Admin <info@thelittlecraft.com>\n"
 "Language-Team: English (UK)\n"
 "Language: en-GB\n"
@@ -22,72 +22,68 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Loco-Target-Locale: en_GB"
 
-#: woocommerce/pdf/tlc-no-vat/credit-note.php:168
-msgid ""
-"The invoiced amount is exempt from value-added tax according to Art. 19 (1) "
-"of the German VAT law (UStG)."
-msgstr ""
-"The invoiced amount is exempt from value-added tax according to Art. 19 (1) "
-"of the German VAT law (UStG)."
+#: functions.php:402
+msgid "SPECIAL OFFER: Free shipping for Germany for orders above 39 €!"
+msgstr "SPECIAL OFFER: Free shipping for Germany for orders above 39 €!"
 
 #: functions.php:152
 msgid "Confirm email address"
 msgstr "Confirm email address"
 
-#: functions.php:166
+#: functions.php:167
 msgid "Please enter a valid account username."
 msgstr "Please enter a valid account username."
 
-#: functions.php:169
+#: functions.php:170
 msgid "Please provide a valid email address."
 msgstr "Please provide a valid email address."
 
-#: functions.php:172
+#: functions.php:173
 msgid "Please confirm your email address by re-typing your email address."
 msgstr "Please confirm your email address by re-typing your email address."
 
-#: functions.php:175
+#: functions.php:176
 msgid "The email addresses do not match."
 msgstr "The email addresses do not match."
 
-#: functions.php:178
+#: functions.php:179
 msgid "Please enter an account password."
 msgstr "Please enter an account password."
 
-#: functions.php:181
+#: functions.php:182
 msgid "You must accept our Terms &amp; Conditions."
 msgstr ""
 "You must accept our <strong>Terms of Use</strong> and <strong>Privacy "
 "Policy</strong>."
 
-#: functions.php:196
-msgid ""
-"Thanks for registering with us. Your <strong>password</strong> was emailed "
-"to you.<br>Check your email inbox and return to this page to login with your "
-"username and password."
-msgstr ""
-"Thanks for registering with us. Your <strong>password</strong> was emailed "
-"to you.<br>Check your email inbox and return to this page to login with your "
-"username and password."
-
 #: functions.php:197
 msgid ""
+"Thanks for registering with us. Your <strong>password</strong> was emailed "
+"to you.<br>Check your email inbox and return to this page to login with your "
+"username and password."
+msgstr ""
+"Thanks for registering with us. Your <strong>password</strong> was emailed "
+"to you.<br>Check your email inbox and return to this page to login with your "
+"username and password."
+
+#: functions.php:198
+msgid ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
 msgstr ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
 
-#: functions.php:213
+#: functions.php:248
 msgid "Confirm Email Address"
 msgstr "Confirm Email Address"
 
-#: functions.php:214
+#: functions.php:249
 msgctxt "placeholder"
 msgid "Retype Email Address"
 msgstr "Retype Email Address"
 
-#: functions.php:244
+#: functions.php:294
 msgid ""
 "The <strong>Email Address</strong> and <strong>Confirm Email Address</strong>"
 " do not match."
@@ -95,15 +91,11 @@ msgstr ""
 "The <strong>Email Address</strong> and <strong>Confirm Email Address</strong>"
 " do not match."
 
-#: functions.php:303
+#: functions.php:353
 msgid "&nbsp;Required field"
 msgstr "&nbsp;Required field"
 
-#: functions.php:352
-msgid "SPECIAL OFFER: Free shipping for Germany for orders above 29 €!"
-msgstr "SPECIAL OFFER: Free shipping for Germany for orders above 29 €!"
-
-#: functions.php:391
+#: functions.php:441
 #, php-format
 msgid ""
 "* All stated prices are final prices excl. <a href=\"%s\" target=\"_blank\">"
@@ -114,7 +106,7 @@ msgstr ""
 "Shipping</a>, exempt from VAT according to Art. 19 of the German VAT law "
 "(UStG)."
 
-#: functions.php:407
+#: functions.php:457
 #, php-format
 msgid ""
 "Final Price excl. <a href=\"%s\" target=\"_blank\">Shipping</a>, exempt from "
@@ -123,11 +115,11 @@ msgstr ""
 "Final Price excl. <a href=\"%s\" target=\"_blank\">Shipping</a>, exempt from "
 "VAT according to Art. 19 of the German VAT law (UStG)"
 
-#: functions.php:546
+#: functions.php:590
 msgid "Buy Tickets"
 msgstr "Buy Tickets"
 
-#: woocommerce/checkout/terms.php:16
+#: woocommerce/checkout/terms.php:17
 #, php-format
 msgid ""
 "I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">Terms &amp; "
@@ -135,6 +127,14 @@ msgid ""
 msgstr ""
 "I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">Terms of "
 "Use</a> and <a href=\"%s\" target=\"_blank\">Privacy Policy</a>"
+
+#: woocommerce/pdf/tlc-no-vat/credit-note.php:168
+msgid ""
+"The invoiced amount is exempt from value-added tax according to Art. 19 (1) "
+"of the German VAT law (UStG)."
+msgstr ""
+"The invoiced amount is exempt from value-added tax according to Art. 19 (1) "
+"of the German VAT law (UStG)."
 
 #. Name of the theme
 msgid "Storefront Child Theme"

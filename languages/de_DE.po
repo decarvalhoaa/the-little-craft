@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TheLittleCraft 1.0\n"
 "Report-Msgid-Bugs-To: http://www.thelittlecraft.com\n"
-"POT-Creation-Date: 2017-04-04 21:04+0000\n"
-"PO-Revision-Date: 2017-04-04 21:04+0000\n"
+"POT-Creation-Date: 2017-04-24 12:29+0000\n"
+"PO-Revision-Date: 2017-04-24 12:29+0000\n"
 "Last-Translator: Admin <info@thelittlecraft.com>\n"
 "Language-Team: German\n"
 "Language: de-DE\n"
@@ -22,37 +22,43 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Loco-Target-Locale: de_DE"
 
+#: functions.php:402
+msgid "SPECIAL OFFER: Free shipping for Germany for orders above 39 €!"
+msgstr ""
+"AKTUELLES ANGEBOT: Versandkostenfreie Lieferung für Bestellungen ab 39 € "
+"innerhalb von Deutschland!"
+
 #: functions.php:152
 msgid "Confirm email address"
 msgstr "E-Mail-Adresse bestätigen"
 
-#: functions.php:166
+#: functions.php:167
 msgid "Please enter a valid account username."
 msgstr "Bitte gib einen gültige Benutzernamen ein."
 
-#: functions.php:169
+#: functions.php:170
 msgid "Please provide a valid email address."
 msgstr "Bitte gib eine gültige E-Mail-Adresse an."
 
-#: functions.php:172
+#: functions.php:173
 msgid "Please confirm your email address by re-typing your email address."
 msgstr "Bitte bestätige deine E-Mail-Adresse, indem du diese erneut eingibst."
 
-#: functions.php:175
+#: functions.php:176
 msgid "The email addresses do not match."
 msgstr "Die E-Mail-Adressen stimmen nicht überein."
 
-#: functions.php:178
+#: functions.php:179
 msgid "Please enter an account password."
 msgstr "Bitte gib ein Passwort für das Konto ein."
 
-#: functions.php:181
+#: functions.php:182
 msgid "You must accept our Terms &amp; Conditions."
 msgstr ""
 "Die Zustimmung zu unseren <strong>Allgemeinen Geschäftsbedingungen (AGB)"
 "</strong> und <strong>Datenschutzerklärung</strong> ist erforderlich."
 
-#: functions.php:196
+#: functions.php:197
 msgid ""
 "Thanks for registering with us. Your <strong>password</strong> was emailed "
 "to you.<br>Check your email inbox and return to this page to login with your "
@@ -63,7 +69,7 @@ msgstr ""
 "deinen Posteingang und kehre zu dieser Seite zurück, um dich mit deinem "
 "Benutzernamen und Passwort anzumelden."
 
-#: functions.php:197
+#: functions.php:198
 msgid ""
 "<strong>Notice:</strong> If you don&rsquo;t find the email with the password "
 "in your inbox, check your spam or junk folder."
@@ -71,16 +77,16 @@ msgstr ""
 "<strong>Hinweis:</strong> Wenn du die E-Mail mit dem Passwort in deinem "
 "Posteingang nicht findest, überprüfe bitte deinen Spam- oder Junk-Ordner."
 
-#: functions.php:213
+#: functions.php:248
 msgid "Confirm Email Address"
 msgstr "E-Mail-Adresse bestätigen"
 
-#: functions.php:214
+#: functions.php:249
 msgctxt "placeholder"
 msgid "Retype Email Address"
 msgstr "Bitte gib deine Emai-Adresse erneut ein"
 
-#: functions.php:244
+#: functions.php:294
 msgid ""
 "The <strong>Email Address</strong> and <strong>Confirm Email Address</strong>"
 " do not match."
@@ -88,17 +94,11 @@ msgstr ""
 "Die <strong>E-Mail-Adresse</strong> und die <strong>E-Mail-Adresse "
 "bestätigen</strong> stimmen nicht überein."
 
-#: functions.php:303
+#: functions.php:353
 msgid "&nbsp;Required field"
 msgstr "&nbsp;Pflichtfeld"
 
-#: functions.php:352
-msgid "SPECIAL OFFER: Free shipping for Germany for orders above 29 €!"
-msgstr ""
-"AKTUELLES ANGEBOT: Versandkostenfreie Lieferung für Bestellungen ab 29 € "
-"innerhalb von Deutschland!"
-
-#: functions.php:391
+#: functions.php:441
 #, php-format
 msgid ""
 "* All stated prices are final prices excl. <a href=\"%s\" target=\"_blank\">"
@@ -109,7 +109,7 @@ msgstr ""
 "target=\"_blank\">Versandkosten</a>, keine Ausweisung der Umsatzsteuer gemäß "
 "§ 19 UStG."
 
-#: functions.php:407
+#: functions.php:457
 #, php-format
 msgid ""
 "Final Price excl. <a href=\"%s\" target=\"_blank\">Shipping</a>, exempt from "
@@ -118,11 +118,11 @@ msgstr ""
 "Endpreis zzgl. <a href=\"%s\" target=\"_blank\">Versandkosten</a>, keine "
 "Ausweisung der Umsatzsteuer gemäß § 19 UStG"
 
-#: functions.php:546
+#: functions.php:590
 msgid "Buy Tickets"
 msgstr "Tickets kaufen"
 
-#: woocommerce/checkout/terms.php:16
+#: woocommerce/checkout/terms.php:17
 #, php-format
 msgid ""
 "I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">Terms &amp; "

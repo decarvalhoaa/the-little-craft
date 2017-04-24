@@ -394,12 +394,12 @@ add_action( 'storefront_before_header', 'tlc_storefront_add_topbar' );
  * Adds a Store wide notice, before the header.
  */
 if ( function_exists( 'pll_register_string' ) ) {
-    pll_register_string( 'announcement', 'SPECIAL OFFER: Free shipping for Germany for orders above 29 €!', 'thelittlecraft' );
+    pll_register_string( 'announcement', 'SPECIAL OFFER: Free shipping for Germany for orders above 39 €!', 'thelittlecraft' );
 }
 function tlc_storefront_add_shop_notice() {
 	?>
 	<div id="tlc-announcement" class="tlc-announcement green show-on-mobile">
-	    <span><?php function_exists( 'pll_e' ) ? pll_e( 'SPECIAL OFFER: Free shipping for Germany for orders above 29 €!' ) : _e( 'SPECIAL OFFER: Free shipping for Germany for orders above 29 €!', 'thelittlecraft'); ?></span>
+	    <span><?php function_exists( 'pll_e' ) ? pll_e( 'SPECIAL OFFER: Free shipping for Germany for orders above 39 €!' ) : _e( 'SPECIAL OFFER: Free shipping for Germany for orders above 39 €!', 'thelittlecraft'); ?></span>
 	</div>
 	<?php
 }
