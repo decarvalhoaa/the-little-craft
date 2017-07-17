@@ -264,7 +264,6 @@ function tlc_woocommerce_checkout_fields( $fields ) {
     $fields['billing'] = array_slice( $fields['billing'], 0, $index, true ) + array( 'billing_email-2' => $billing_email2 ) + array_slice( $fields['billing'], $index, count( $fields['billing'] ) - 1, true );
     */
 	$fields['billing']['billing_email-2'] = $billing_email2;
-	error_log(print_r($fields['billing'], true));
 
 	// Reorder fields
 	foreach($order_billing as $index) {
