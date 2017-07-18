@@ -5,7 +5,7 @@ Author:       	Antonio de Carvalho
 Author URI:     https://github.com/decarvalhoaa
 Template:     	storefront
 Description:  	This is a blank child theme for WooThemes StoreFront theme
-Version:      	1.1.0
+Version:      	1.1.1
 License:      	GNU General Public License v2 or later
 License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  	thelittlecraft
@@ -541,16 +541,16 @@ button.menu-toggle, button.menu-toggle:hover {
 }
 
 /* Custom woocommerce-invalid-required-field and woocommerce-validated */
-.form-row.tlc-woocommerce-invalid-required-field input.input-text {
-	box-shadow: inset 2px 0 0 #ff0000 !important;
-}
-
 .form-row.woocommerce-invalid input.input-text {
 	box-shadow: inset 2px 0 0 #ff0000 !important;
 }
 
 .form-row.woocommerce-validated input.input-text {
     box-shadow: inset 2px 0 0 #79bc32 !important;
+}
+
+.form-row.tlc-woocommerce-invalid-required-field input.input-text {
+	box-shadow: inset 2px 0 0 #ff0000 !important;
 }
 
 /* Style Sale badge */

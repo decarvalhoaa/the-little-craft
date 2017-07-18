@@ -203,34 +203,6 @@ add_filter( 'woocommerce_registration_redirect', 'tlc_woocommerce_registration_r
 
 // Add repeat email field to billing form in checkout page
 function tlc_woocommerce_checkout_fields( $fields ) {
-	$order_billing = array(
-		'billing_first_name',
-		'billing_last_name',
-		'billing_company',
-		'billing_email',
-		'billing_email-2', // new repeat email field
-		'billing_country',
-		'billing_address_1',
-		'billing_address_2',
-		'billing_postcode',
-		'billing_city',
-		'billing_state'
-	);
-	
-	$order_shipping = array(
-		'shipping_first_name',
-		'shipping_last_name',
-		'shipping_company',
-		'shipping_country',
-		'shipping_address_1',
-		'shipping_address_2',
-		'shipping_postcode',
-		'shipping_city',
-		'shipping_state'
-	);
-	
-	$fields_ordered = array();
-    
 	// Remove Phone field
     unset( $fields['billing']['billing_phone'] );
 	
@@ -244,42 +216,35 @@ function tlc_woocommerce_checkout_fields( $fields ) {
     $fields['billing']['billing_email']['class'] = array('form-row-wide');
 
     $billing_email2 = array(
-		'type'		=> 'email',
-		'label'		=> __( 'Confirm Email Address', 'thelittlecraft' ),
-		'placeholder'	=> _x( 'Retype Email Address', 'placeholder', 'thelittlecraft' ),
-		'class'		=> array('form-row-wide', 'validate-email' ),
-		'required'	=> true
+		'label'			=> __( 'Confirm Email Address', 'thelittlecraft' ),
+		'required'		=> true,
+		'type'			=> 'email',
+		'class'			=> array('form-row-wide'),
+		'validate'		=> array('email'),
+		'autocomplete'	=> 'email',
+		'priority'		=> 120,
+		'placeholder'	=> _x( 'Retype Email Address', 'placeholder', 'thelittlecraft' )
     );
 
-	/*
-    $index = 1;
-    foreach( $fields['billing'] as $key => $field ) {
-		if ( strcmp( $key, 'billing_email' ) == 0 ) {
-			break;
-		} else {
-			$index++;
-		}
-    }
-
-    $fields['billing'] = array_slice( $fields['billing'], 0, $index, true ) + array( 'billing_email-2' => $billing_email2 ) + array_slice( $fields['billing'], $index, count( $fields['billing'] ) - 1, true );
-    */
 	$fields['billing']['billing_email-2'] = $billing_email2;
 
 	// Reorder fields
-	foreach($order_billing as $index) {
-		if ( isset( $fields['billing'][$index] ) )
-			$fields_ordered['billing'][$index] = $fields['billing'][$index];
-	}
-	$fields['billing'] = $fields_ordered['billing'];
-	foreach($order_shipping as $index) {
-		if ( isset( $fields['shipping'][$index] ) )
-			$fields_ordered['shipping'][$index] = $fields['shipping'][$index];
-	}
-	$fields['shipping'] = $fields_ordered['shipping'];
+	$fields['billing']['billing_email']['priority'] = 35;
+	$fields['billing']['billing_email-2']['priority'] = 36;
 	
 	return $fields;
 };
 add_filter( 'woocommerce_checkout_fields', 'tlc_woocommerce_checkout_fields', 10, 1 );
+
+// Reorder fields in checkout page
+function tlc_woocommerce_default_address_fields_reorder( $fields ) {
+	$fields['postcode']['priority'] = 65;
+	$fields['city']['priority'] = 70;
+	$fields['state']['priority'] = 200;
+	
+	return $fields;
+}
+add_filter( 'woocommerce_default_address_fields', 'tlc_woocommerce_default_address_fields_reorder', 10, 1 );
 
 // Remove Phone field also from edit billing address under my account
 function tlc_woocommerce_billing_fields( $fields ) {
