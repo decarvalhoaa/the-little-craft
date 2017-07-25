@@ -670,38 +670,58 @@ add_filter( 'get_terms', 'tlc_custom_get_terms', 10, 3 );
 
 /**
  * Alo EasyMail Newsletter plugin customisations
+ *
+ * @todo:	Check why lang is not added to newsletter sub at checkout optin
  */
+/* Get default newsletter mailing list */
+function tlc_get_newsletter_default_mailinglist() {
+	if ( function_exists( 'alo_em_get_mailinglists' ) ) {
+		$mailing_lists = alo_em_get_mailinglists();
+		reset( $mailing_lists );
+		return key( $mailing_lists );		
+	} else {
+		return false;
+	}
+}
+
+/* Force newsletter subcription language to German - site lang */
+function tlc_force_set_newletter_subcription_lang() {
+	return 'de';
+}
+add_filter( 'alo_easymail_multilang_get_language', 'tlc_force_set_newletter_subcription_lang' );
+
+/* Add new newsletter subscribers to default mailing list */
 function tlc_easymail_auto_add_subscriber_to_list( $subscriber, $user_id = false ) {
-       global $post;
-
-	//error_log(print_r($post, true));
-	//is_singular() ? error_log(print_r('is singular', true)) : error_log(print_r(is_singular(), true));
-	//is_object( $post ) ? error_log(print_r('is object', true)) : error_log(print_r(is_object( $post ), true));
-
-	/* TODO find a way to get the page id outside of the Loop
-	 * EG: http://wordpress.stackexchange.com/questions/166106/how-to-get-post-id-of-the-current-page-post-inside-a-widget
-	if ( is_singular() && is_object( $post ) ) {
-                switch( $post->ID ) {
-                        // My Account and Mein Konto pages
-                        case 11:
-                        case 58:
-                                $list_id = 2; // Registered User List
-                                break;
-
-                        // etc etc ........
-
-                        // Anywhere from the Footer Widget
-                        default:
-                                $list_id = 1; // Subscriber Default List
-                }
-                alo_em_add_subscriber_to_list ( $subscriber->ID, $list_id );
-        }*/
-	alo_em_add_subscriber_to_list ( $subscriber->ID, 1 );
+	alo_em_add_subscriber_to_list( $subscriber->ID, tlc_get_newsletter_default_mailinglist() );
 }
 add_action( "alo_easymail_new_subscriber_added",  "tlc_easymail_auto_add_subscriber_to_list", 10, 2 );
 
-/* Show the optin/optout on Checkout */
+/* Show the newsletter optin on Checkout */
 add_action( 'woocommerce_checkout_before_terms_and_conditions', 'alo_em_show_registration_optin' );
+
+/* Save the newsletter optin on Checkout */
+function tlc_save_newletter_optin_checkout( $order_id ) {
+	$order = wc_get_order( $order_id ); 
+ 
+    if( method_exists( $order, 'get_billing_email' ) ) {
+		$fields['email'] = $order->get_billing_email();
+		$fields['name'] = trim( $order->get_billing_first_name() . " " . $order->get_billing_last_name() );
+    } else { 
+        // NOTE: for compatibility with WooCommerce < 3.0 
+        $fields['email'] = $order->billing_email;
+		$fields['name'] = trim( $order->billing_first_name . " " . $order->billing_last_name );
+    }
+	  
+	if ( function_exists( 'alo_em_add_subscriber' ) && function_exists( 'alo_em_get_language' ) && is_email( $fields['email'] ) ) {		
+		$added = alo_em_add_subscriber( $fields, 1, alo_em_get_language( false ) ); // don't use browser detection; use blog lang instead
+		if ( $added == "OK" && $subscriber_id = alo_em_is_subscriber( $fields['email'] ) ) {
+			// add to default list
+			if ( function_exists( 'alo_em_add_subscriber_to_list' ) )
+				alo_em_add_subscriber_to_list( $subscriber_id, tlc_get_newsletter_default_mailinglist() );
+		}
+	}
+}
+add_action( 'woocommerce_checkout_order_processed', 'tlc_save_newletter_optin_checkout', 10, 1 ); // Another hook that can be used 'woocommerce_thankyou'
 
 
 /**
