@@ -697,27 +697,43 @@ function tlc_easymail_auto_add_subscriber_to_list( $subscriber, $user_id = false
 add_action( "alo_easymail_new_subscriber_added",  "tlc_easymail_auto_add_subscriber_to_list", 10, 2 );
 
 /* Show the newsletter optin on Checkout */
-add_action( 'woocommerce_checkout_before_terms_and_conditions', 'alo_em_show_registration_optin' );
+function tlc_show_newsletter_optin_for_unsubscribed() {
+	if ( function_exists( 'alo_em_show_registration_optin' ) ) {
+		$current_user = wp_get_current_user();
+		if ( $current_user->ID ) {
+			// logged in user >> use user email to check whether is subscribed to newsletter
+			if ( function_exists( 'alo_em_is_subscriber' ) && !alo_em_is_subscriber( $current_user->user_email ) ) {
+				alo_em_show_registration_optin();
+			}
+		} else {
+			alo_em_show_registration_optin();
+		}
+	}
+}
+add_action( 'woocommerce_checkout_before_terms_and_conditions', 'tlc_show_newsletter_optin_for_unsubscribed' );
 
 /* Save the newsletter optin on Checkout */
 function tlc_save_newletter_optin_checkout( $order_id ) {
-	$order = wc_get_order( $order_id ); 
- 
-    if( method_exists( $order, 'get_billing_email' ) ) {
-		$fields['email'] = $order->get_billing_email();
-		$fields['name'] = trim( $order->get_billing_first_name() . " " . $order->get_billing_last_name() );
-    } else { 
-        // NOTE: for compatibility with WooCommerce < 3.0 
-        $fields['email'] = $order->billing_email;
-		$fields['name'] = trim( $order->billing_first_name . " " . $order->billing_last_name );
-    }
-	  
-	if ( function_exists( 'alo_em_add_subscriber' ) && function_exists( 'alo_em_get_language' ) && is_email( $fields['email'] ) ) {		
-		$added = alo_em_add_subscriber( $fields, 1, alo_em_get_language( false ) ); // don't use browser detection; use blog lang instead
-		if ( $added == "OK" && $subscriber_id = alo_em_is_subscriber( $fields['email'] ) ) {
-			// add to default list
-			if ( function_exists( 'alo_em_add_subscriber_to_list' ) )
-				alo_em_add_subscriber_to_list( $subscriber_id, tlc_get_newsletter_default_mailinglist() );
+	if ( isset ($_POST['alo_em_opt']) && $_POST['alo_em_opt'] == "yes" ) {
+		// Optin selected
+		$order = wc_get_order( $order_id ); 
+	 
+		if( method_exists( $order, 'get_billing_email' ) ) {
+			$fields['email'] = $order->get_billing_email();
+			$fields['name'] = trim( $order->get_billing_first_name() . " " . $order->get_billing_last_name() );
+		} else { 
+			// NOTE: for compatibility with WooCommerce < 3.0 
+			$fields['email'] = $order->billing_email;
+			$fields['name'] = trim( $order->billing_first_name . " " . $order->billing_last_name );
+		}
+		  
+		if ( function_exists( 'alo_em_add_subscriber' ) && function_exists( 'alo_em_get_language' ) && is_email( $fields['email'] ) ) {		
+			$added = alo_em_add_subscriber( $fields, 1, alo_em_get_language( false ) ); // don't use browser detection; use blog lang instead
+			if ( $added == "OK" && $subscriber_id = alo_em_is_subscriber( $fields['email'] ) ) {
+				// add to default list
+				if ( function_exists( 'alo_em_add_subscriber_to_list' ) )
+					alo_em_add_subscriber_to_list( $subscriber_id, tlc_get_newsletter_default_mailinglist() );
+			}
 		}
 	}
 }
