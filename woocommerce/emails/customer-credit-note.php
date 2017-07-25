@@ -1,4 +1,5 @@
 <?php
+use WPO\WC\PDF_Invoices\Compatibility\Order as WCX_Order;
 /**
  * Customer credit note email
  *
@@ -11,6 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+$order_date = WCX_Order::get_prop( $order, 'date_created' );
+
 ?>
 
 <?php do_action( 'woocommerce_email_header', $email_heading ); ?>
@@ -22,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text );
 ?>
 
-<h2><?php echo __( 'Order:', 'wpo_wcpdf_pro' ) . ' ' . $order->get_order_number(); ?> (<?php printf( '<time datetime="%s">%s</time>', date_i18n( 'c', strtotime( $order->order_date ) ), date_i18n( wc_date_format(), strtotime( $order->order_date ) ) ); ?>)</h2>
+<h2><?php echo __( 'Order:', 'woocommerce' ) . ' ' . $order->get_order_number(); ?> (<?php printf( '<time datetime="%s">%s</time>', $order_date->date_i18n( 'c' ), $order_date->date_i18n( wc_date_format() ) ); ?>)</h2>
 
 <p><?php echo $email_body; ?></p>
 
