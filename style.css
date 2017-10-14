@@ -78,6 +78,10 @@ img.desaturate {
 	filter: url(assets/desaturate.svg#greyscale);
 }
 
+/* Holidays shop wide notice */
+.woocommerce-demo-store .demo_store a {
+   display: none !important; /* Remove dismiss button */
+}
 
 /*******************************************************************************
  *
